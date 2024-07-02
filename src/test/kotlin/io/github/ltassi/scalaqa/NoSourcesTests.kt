@@ -31,7 +31,6 @@ class NoSourcesTests : FreeSpec({
         println(result.output)
         result.tasks.map { it.outcome }.forEach { it shouldBe TaskOutcome.SUCCESS }
     }
-
 }) {
     companion object {
         fun testSetup(taskName: String, buildFile: () -> String): BuildResult =

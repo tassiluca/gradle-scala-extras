@@ -11,11 +11,18 @@ group = "io.github.ltassi"
 
 repositories {
     mavenCentral()
+    maven {
+        setOf(libs.gradle.scalafix)
+            .map { it.get() }
+            .map { "${it.group?.split(".")?.lastOrNull() ?: error("No group found for $it")}/${it.name}" }
+            .forEach { url = uri("https://maven.pkg.github.com/$it") }
+    }
 }
 
 dependencies {
     implementation(gradleApi())
     implementation(libs.spotless)
+    implementation(libs.gradle.scalafix)
     testImplementation(gradleTestKit())
     testImplementation(libs.bundles.kotlin.testing)
     testImplementation(libs.gradle.plugins.testkit)
