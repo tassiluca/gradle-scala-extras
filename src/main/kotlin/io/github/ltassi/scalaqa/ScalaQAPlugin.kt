@@ -6,6 +6,7 @@ import com.diffplug.gradle.spotless.ScalaExtension
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.gradle.spotless.SpotlessPlugin
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
+import io.github.ltassi.scalaqa.configutations.ScalaFmtConfiguration
 
 /** The scala QA plugin entry point. */
 class ScalaQAPlugin : Plugin<Project> {
@@ -15,15 +16,19 @@ class ScalaQAPlugin : Plugin<Project> {
             apply(SpotlessPlugin::class.java)
             apply(ScalafixPlugin::class.java)
         }
-        // val extension = project.extensions.create("scalaQA", ScalaQAExtension::class.java, this)
-        val checkTask = project.tasks.findByName("check")
-        project.configureExtension<SpotlessExtension> {
+        val extension = project.extensions.create("scalaQA", ScalaQAExtension::class.java, project)
+        project.configureScalaFmt(extension.scalaFmtConfiguration)
+    }
+
+    private fun Project.configureScalaFmt(configuration: ScalaFmtConfiguration) {
+        logger.info("Pickup scalafmt configuration from ${configuration.configFile.get()}")
+        logger.info("Using scalafmt version ${configuration.version}")
+        configureExtension<SpotlessExtension> {
             isEnforceCheck = true
+            scala {
+                it.scalafmt(configuration.version).configFile(configuration.configFile.get())
+            }
         }
-        project.configureExtension<ScalaExtension> {
-            scalafmt("3.8.2").configFile("scalafmt.conf")
-        }
-        checkTask?.dependsOn("spotlessCheck")
     }
 
     companion object {
