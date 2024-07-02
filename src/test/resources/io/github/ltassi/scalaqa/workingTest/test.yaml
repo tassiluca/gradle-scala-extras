@@ -1,0 +1,13 @@
+tests:
+  - description: "Base Scala QA tasks should execute"
+    configuration:
+      tasks:
+        - clean
+        - check
+      options:
+        - --stacktrace
+    expectation:
+      result: success
+      outcomes:
+        success:
+          - spotlessCheck

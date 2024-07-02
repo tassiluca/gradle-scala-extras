@@ -1,0 +1,17 @@
+[versions]
+kotlin = "2.0.0"
+kotest = "5.9.1"
+
+[libraries]
+kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
+kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
+gradle-plugins-testkit = "io.github.mirko-felice.testkit:core:0.9.0"
+spotless = "com.diffplug.spotless:spotless-plugin-gradle:6.25.0"
+
+[bundles]
+kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm" ]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.62.3"
+gradlePluginPublish = { id = "com.gradle.plugin-publish", version = "1.2.1" }
