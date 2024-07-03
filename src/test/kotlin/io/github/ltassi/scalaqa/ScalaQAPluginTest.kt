@@ -12,8 +12,11 @@ class ScalaQAPluginTest : StringSpec({
 
     fun Testkit.projectTest(folder: String) = this.test(projectName, baseFolder + folder)
 
-    "Test with sources" {
-        Testkit.projectTest("workingTest")
+    "Working test with sources" {
+        Testkit.projectTest("working")
     }
 
+    "Failing test with sources" {
+        Testkit.projectTest("failing")
+    }
 })

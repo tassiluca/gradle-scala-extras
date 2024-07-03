@@ -1,5 +1,5 @@
 tests:
-  - description: "Base Scala QA tasks should execute"
+  - description: "Base Scala QA tasks should succeed"
     configuration:
       tasks:
         - clean
@@ -11,4 +11,4 @@ tests:
       result: success
       outcomes:
         success:
-          - spotlessCheck
+          - spotlessScalaCheck
