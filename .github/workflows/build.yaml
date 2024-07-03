@@ -1,0 +1,31 @@
+name: Build, Test and Check plugin
+
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  Build-Test-Check:
+    strategy:
+      matrix:
+        os: [ubuntu, windows, macos]
+        jvm_version: [11, 17, 21]
+    runs-on: ${{ matrix.os }}-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: ${{ matrix.jvm_version }}
+      - name: Build
+        run: ./gradlew classes testClasses
+      - name: Test
+        run: ./gradlew test
+      - name: Check
+        run: ./gradlew check

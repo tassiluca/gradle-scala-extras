@@ -2,7 +2,6 @@ package io.github.ltassi.scalaqa
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import com.diffplug.gradle.spotless.ScalaExtension
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.gradle.spotless.SpotlessPlugin
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
