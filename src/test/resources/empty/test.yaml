@@ -1,0 +1,12 @@
+tests:
+  - description: "Base Scala QA tasks should succeed"
+    configuration:
+      tasks:
+        - build
+      options:
+        - --stacktrace
+    expectation:
+      result: success
+      outcomes:
+        success:
+          - build
