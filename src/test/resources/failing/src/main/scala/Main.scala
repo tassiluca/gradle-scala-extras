@@ -1,3 +1,5 @@
+import scala.Nil
+
 @main def
 helloWorld(): Unit =
   val a = 1

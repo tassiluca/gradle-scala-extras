@@ -1,7 +1,7 @@
 package io.github.ltassi.scalaqa
 
-import io.github.ltassi.scalaqa.configutations.ScalaFmtConfiguration
 import org.gradle.api.Project
+import org.gradle.api.provider.Property
 
 /**
  * The scala QA plugin extension.
@@ -10,9 +10,19 @@ import org.gradle.api.Project
 open class ScalaQAExtension(project: Project) {
 
     internal val scalaFmtConfiguration = ScalaFmtConfiguration(project)
+    internal val scalafixConfiguration = ScalafixConfiguration(project)
+
+    /** Whether to treat all warnings as errors. */
+    val allWarningsAsErrors: Property<Boolean> = project.objects.property(Boolean::class.java)
+        .apply { convention(true) }
 
     /** DSL entry point for scalafmt configuration. */
     fun scalafmt(apply: ScalaFmtConfiguration.() -> Unit) {
         scalaFmtConfiguration.apply()
+    }
+
+    /** DSL entry point for scalafix configuration. */
+    fun scalafix(apply: ScalafixConfiguration.() -> Unit) {
+        scalafixConfiguration.apply()
     }
 }

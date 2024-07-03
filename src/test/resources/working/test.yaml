@@ -12,3 +12,6 @@ tests:
       outcomes:
         success:
           - spotlessScalaCheck
+          - checkScalafix
+          - checkScalafixMain
+          - checkScalafixTest
