@@ -17,12 +17,16 @@ class ScalaQAPluginTest : FreeSpec({
         "with formatting and linting issues" {
             Testkit.projectTest("failing")
         }
+
+        "with custom configuration" {
+            Testkit.projectTest("custom")
+        }
     }
 }) {
     companion object {
         private const val PROJECT_NAME = "gradle-scala-qa"
 
         private fun Testkit.projectTest(folder: String) =
-            test(PROJECT_NAME, DEFAULT_TEST_FOLDER + folder, forwardOutput = false)
+            test(PROJECT_NAME, DEFAULT_TEST_FOLDER + folder, forwardOutput = true)
     }
 }

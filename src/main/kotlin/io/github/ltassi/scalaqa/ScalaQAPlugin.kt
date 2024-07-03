@@ -1,11 +1,11 @@
 package io.github.ltassi.scalaqa
 
-import org.gradle.api.Plugin
-import org.gradle.api.Project
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.gradle.spotless.SpotlessPlugin
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
 import io.github.ltassi.scalaqa.configutations.ScalaFmtConfiguration
+import org.gradle.api.Plugin
+import org.gradle.api.Project
 
 /** The scala QA plugin entry point. */
 class ScalaQAPlugin : Plugin<Project> {
@@ -20,7 +20,7 @@ class ScalaQAPlugin : Plugin<Project> {
     }
 
     private fun Project.configureScalaFmt(configuration: ScalaFmtConfiguration) {
-        logger.info("Pickup scalafmt configuration from ${configuration.configFile.get()}")
+        logger.info("Picking up scalafmt configuration from ${configuration.configFile.get()}")
         logger.info("Using scalafmt version ${configuration.version}")
         configureExtension<SpotlessExtension> {
             isEnforceCheck = true
