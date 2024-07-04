@@ -16,6 +16,10 @@ repositories {
             .map { it.get() }
             .map { "${it.group?.split(".")?.lastOrNull() ?: error("No group found for $it")}/${it.name}" }
             .forEach { url = uri("https://maven.pkg.github.com/$it") }
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GH_USERNAME")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+        }
     }
 }
 

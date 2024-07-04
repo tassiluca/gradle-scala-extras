@@ -24,6 +24,9 @@ jobs:
           distribution: 'adopt'
           java-version: ${{ matrix.jvm_version }}
       - name: Build
+        env:
+          GH_USERNAME: ${{ env.GH_USERNAME }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: ./gradlew classes testClasses
       - name: Test
         run: ./gradlew test
