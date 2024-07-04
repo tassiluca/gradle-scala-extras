@@ -21,7 +21,7 @@ class ScalaQAPlugin : Plugin<Project> {
         project.configureScalafix(extension.scalafixConfiguration)
     }
 
-    private fun Project.configureScalaFmt(configuration: ScalaFmtConfiguration) {
+    private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
         logger.info("Picking up scalafmt configuration from ${configuration.configFile.get()}")
         logger.info("Using scalafmt version ${configuration.version}")
         configureExtension<SpotlessExtension> {

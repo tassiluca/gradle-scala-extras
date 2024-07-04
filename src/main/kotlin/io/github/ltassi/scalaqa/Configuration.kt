@@ -16,7 +16,7 @@ abstract class Configuration(project: Project) {
 }
 
 /** The configuration for scalafmt linter. */
-class ScalaFmtConfiguration(project: Project) : Configuration(project) {
+class ScalafmtConfiguration(project: Project) : Configuration(project) {
 
     override val defaultConfigurationFileName: String
         get() = DEFAULT_SCALAFMT_CONFIG_FILE

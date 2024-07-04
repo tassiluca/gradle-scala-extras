@@ -9,7 +9,7 @@ import org.gradle.api.provider.Property
  */
 open class ScalaQAExtension(project: Project) {
 
-    internal val scalaFmtConfiguration = ScalaFmtConfiguration(project)
+    internal val scalaFmtConfiguration = ScalafmtConfiguration(project)
     internal val scalafixConfiguration = ScalafixConfiguration(project)
 
     /** Whether to treat all warnings as errors. */
@@ -17,7 +17,7 @@ open class ScalaQAExtension(project: Project) {
         .apply { convention(true) }
 
     /** DSL entry point for scalafmt configuration. */
-    fun scalafmt(apply: ScalaFmtConfiguration.() -> Unit) {
+    fun scalafmt(apply: ScalafmtConfiguration.() -> Unit) {
         scalaFmtConfiguration.apply()
     }
 
