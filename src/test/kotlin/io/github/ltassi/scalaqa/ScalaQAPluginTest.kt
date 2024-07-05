@@ -1,7 +1,9 @@
 package io.github.ltassi.scalaqa
 
 import io.github.mirkofelice.api.Testkit
+import io.github.mirkofelice.api.Testkit.DEFAULT_TEST_FOLDER
 import io.kotest.core.spec.style.FreeSpec
+import java.io.File.separator
 
 class ScalaQAPluginTest : FreeSpec({
 
@@ -25,8 +27,10 @@ class ScalaQAPluginTest : FreeSpec({
 }) {
     companion object {
         private const val PROJECT_NAME = "gradle-scala-qa"
+        private val projectsBaseFolder =
+            DEFAULT_TEST_FOLDER + "io${separator}github${separator}ltassi${separator}scalaqa$separator"
 
         private fun Testkit.projectTest(folder: String) =
-            test(PROJECT_NAME, DEFAULT_TEST_FOLDER + folder, forwardOutput = true)
+            test(PROJECT_NAME, projectsBaseFolder + folder, forwardOutput = true)
     }
 }
