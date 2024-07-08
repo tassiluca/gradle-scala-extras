@@ -1,5 +1,5 @@
 tests:
-  - description: "Base Scala QA tasks should succeed"
+  - description: "Scala QA plugin applied to an empty project"
     configuration:
       tasks:
         - build

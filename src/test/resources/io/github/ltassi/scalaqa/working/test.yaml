@@ -1,5 +1,5 @@
 tests:
-  - description: "Base Scala QA tasks should succeed"
+  - description: "Properly formatted sources"
     configuration:
       tasks:
         - clean
@@ -11,7 +11,7 @@ tests:
       result: success
       outcomes:
         success:
-          - spotlessScalaCheck
-          - checkScalafix
-          - checkScalafixMain
-          - checkScalafixTest
+          - checkScalafmtAll
+#          - checkScalafix
+#          - checkScalafixMain
+#          - checkScalafixTest

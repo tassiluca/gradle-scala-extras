@@ -8,6 +8,7 @@ kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", 
 gradle-plugins-testkit = "io.github.mirko-felice.testkit:core:0.9.0"
 spotless = "com.diffplug.spotless:spotless-plugin-gradle:6.25.0"
 gradle-scalafix = "io.github.cosmicsilence:gradle-scalafix:0.2.2"
+gradle-scalafmt = "cz.augi:gradle-scalafmt:1.21.2"
 
 [bundles]
 kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm" ]

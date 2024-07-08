@@ -25,7 +25,7 @@ repositories {
 
 dependencies {
     implementation(gradleApi())
-    implementation(libs.spotless)
+    implementation(libs.gradle.scalafmt)
     implementation(libs.gradle.scalafix)
     testImplementation(gradleTestKit())
     testImplementation(libs.bundles.kotlin.testing)

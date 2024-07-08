@@ -1,19 +1,19 @@
 package io.github.ltassi.scalaqa
 
-import com.diffplug.gradle.spotless.SpotlessExtension
-import com.diffplug.gradle.spotless.SpotlessPlugin
+import cz.augi.gradle.scalafmt.ScalafmtPlugin
 import io.github.cosmicsilence.scalafix.ScalafixExtension
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.scala.ScalaCompile
+import cz.augi.gradle.scalafmt.PluginExtension as ScalafmtExtension
 
 /** The scala QA plugin entry point. */
 class ScalaQAPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         with(project.plugins) {
-            apply(SpotlessPlugin::class.java)
+            apply(ScalafmtPlugin::class.java)
             apply(ScalafixPlugin::class.java)
         }
         val extension = project.extensions.create("scalaQA", ScalaQAExtension::class.java, project)
@@ -24,12 +24,10 @@ class ScalaQAPlugin : Plugin<Project> {
     private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
         logger.info("Picking up scalafmt configuration from ${configuration.configFile.get()}")
         logger.info("Using scalafmt version ${configuration.version}")
-        configureExtension<SpotlessExtension> {
-            isEnforceCheck = true
-            scala {
-                it.scalafmt(configuration.version).configFile(configuration.configFile.get())
-            }
+        configureExtension<ScalafmtExtension> {
+            configFilePath = configuration.configFile.get()
         }
+        project.tasks.findByName("check")?.dependsOn("checkScalafmtAll")
     }
 
     private fun Project.configureScalafix(configuration: ScalafixConfiguration) {

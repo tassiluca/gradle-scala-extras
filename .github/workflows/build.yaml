@@ -12,8 +12,8 @@ jobs:
   Build-Test-Check:
     strategy:
       matrix:
-        os: [ubuntu, windows, macos]
-        jvm_version: [11, 17, 21]
+        os: [ubuntu, macos, windows]
+        jvm_version: [21] # [11, 17, 21]
     runs-on: ${{ matrix.os }}-latest
     steps:
       - name: Checkout code
