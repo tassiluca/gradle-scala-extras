@@ -12,7 +12,7 @@ abstract class Configuration(project: Project) {
 
     /** The stringified path to the configuration file. */
     val configFile: Property<String> = project.objects.property(String::class.java)
-        .apply { convention(project.resolveOrFromResource(defaultConfigurationFileName).path) }
+        .apply { convention(project.resolveOrFromResource(defaultConfigurationFileName).absolutePath) }
 }
 
 /** The configuration for scalafmt linter. */

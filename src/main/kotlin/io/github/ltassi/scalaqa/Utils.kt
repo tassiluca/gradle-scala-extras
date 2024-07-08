@@ -6,7 +6,7 @@ import java.io.File
 internal fun resource(path: String, packageStructure: String = "io/github/ltassi/scalaqa/"): File = File(
     checkNotNull(Thread.currentThread().contextClassLoader.getResource(packageStructure + path)) {
         "Unable to access resource $path"
-    }.path,
+    }.toURI(),
 )
 
 internal fun File.contains(filename: String): Boolean {
