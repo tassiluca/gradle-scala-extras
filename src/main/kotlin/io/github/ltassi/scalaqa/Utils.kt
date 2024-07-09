@@ -15,4 +15,4 @@ internal fun File.contains(filename: String): Boolean {
 }
 
 internal fun Project.resolveOrFromResource(filename: String): File =
-    if (rootDir.contains(filename)) rootDir.resolve(filename) else resource(filename).copyTo(rootDir.resolve(filename))
+    if (rootDir.contains(filename)) rootDir.resolve(filename) else resource(filename)

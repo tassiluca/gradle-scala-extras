@@ -36,7 +36,7 @@ class ScalaQAPlugin : Plugin<Project> {
             setConfigFile(configuration.configFile.get())
         }
         tasks.withType(ScalaCompile::class.java) {
-            it.scalaCompileOptions.additionalParameters = listOf("-Wunused:all")
+            it.scalaCompileOptions.additionalParameters = configuration.defaultCompilationOptions.toList()
         }
     }
 

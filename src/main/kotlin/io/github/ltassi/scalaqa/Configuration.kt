@@ -39,8 +39,17 @@ class ScalafixConfiguration(project: Project) : Configuration(project) {
     override val defaultConfigurationFileName: String
         get() = DEFAULT_SCALAFIX_CONFIG_FILE
 
+    /** The compilation options to add to the Scala compiler for the default configuration. */
+    internal val defaultCompilationOptions: Set<String> = configFile
+        .takeIf { File(it.get()).absolutePath == resource(defaultConfigurationFileName).absolutePath }
+        ?.let { setOf(REPORT_UNUSED_OPTION) }
+        .orEmpty()
+
     companion object {
         /** The default scalafix configuration file name. */
         private const val DEFAULT_SCALAFIX_CONFIG_FILE = ".scalafix.conf"
+
+        /** Scala 3 compilation parameter to report unused code elements. */
+        private const val REPORT_UNUSED_OPTION = "-Wunused:all"
     }
 }
