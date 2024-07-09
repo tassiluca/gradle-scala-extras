@@ -8,6 +8,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   Build-Test-Check:
     strategy:
@@ -18,8 +22,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Show current directory
-        run: pwd
+      - name: Move project to C drive if on Windows
+        if: matrix.os == 'windows'
+        run: |
+          mkdir -p /c/gradle-scala-qa
+          mv ./* /c/gradle-scala-qa
+          ls -alh /c/gradle-scala-qa
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -29,8 +37,20 @@ jobs:
         env:
           GH_USERNAME: ${{ env.GH_USERNAME }}
           TOKEN: ${{ secrets.TOKEN }}
-        run: ./gradlew classes testClasses
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            cd /c/gradle-scala-qa
+          fi
+          ./gradlew classes testClasses
       - name: Test
-        run: ./gradlew test
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+              cd /c/gradle-scala-qa
+          fi
+          ./gradlew test
       - name: Check
-        run: ./gradlew check
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+              cd /c/gradle-scala-qa
+          fi
+          ./gradlew check
