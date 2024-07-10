@@ -26,7 +26,7 @@ jobs:
         if: matrix.os == 'windows'
         run: |
           mkdir -p /c/gradle-scala-qa
-          mv ./* /c/gradle-scala-qa
+          mv ./* .* /c/gradle-scala-qa
           ls -alh /c/gradle-scala-qa
       - name: Set up JDK
         uses: actions/setup-java@v3
