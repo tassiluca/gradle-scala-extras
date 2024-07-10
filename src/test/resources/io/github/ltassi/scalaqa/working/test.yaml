@@ -12,6 +12,8 @@ tests:
       outcomes:
         success:
           - checkScalafmtAll
+          - checkScalafmt
+          - checkTestScalafmt
           - checkScalafix
           - checkScalafixMain
           - checkScalafixTest

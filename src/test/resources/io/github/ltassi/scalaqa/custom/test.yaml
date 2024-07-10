@@ -13,9 +13,11 @@ tests:
       outcomes:
         success:
           - checkScalafmtAll
+          - checkScalafmt
+          - checkTestScalafmt
           - checkScalafix
           - checkScalafixMain
           - checkScalafixTest
       output:
         contains:
-          - "Using scalafmt version 3.0.0"
+          - "Using scalafmt version 3.8.0"
