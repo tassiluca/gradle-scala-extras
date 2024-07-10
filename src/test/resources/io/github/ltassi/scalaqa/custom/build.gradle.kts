@@ -20,3 +20,12 @@ tasks.test {
         includeEngines("scalatest")
     }
 }
+
+scalaQA {
+    scalafix {
+        configFile = "qa/custom-scalafix.conf"
+    }
+    scalafmt {
+        configFile = "qa/custom-scalafmt.conf"
+    }
+}
