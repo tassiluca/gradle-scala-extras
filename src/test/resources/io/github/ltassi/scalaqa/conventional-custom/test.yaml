@@ -1,0 +1,21 @@
+tests:
+  - description: "With custom configuration"
+    configuration:
+      tasks:
+        - clean
+        - check
+      options:
+        - --stacktrace
+        - --info
+        - --continue
+    expectation:
+      result: success
+      outcomes:
+        success:
+          - checkScalafmtAll
+          - checkScalafix
+          - checkScalafixMain
+          - checkScalafixTest
+      output:
+        contains:
+          - "Using scalafmt version 3.0.0"

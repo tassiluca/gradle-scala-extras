@@ -2,27 +2,29 @@ package io.github.ltassi.scalaqa
 
 import org.gradle.api.Project
 import org.gradle.api.provider.Property
+import org.gradle.api.provider.Provider
 import java.io.File
 
 /** A base configuration. */
-abstract class Configuration(project: Project) {
+open class Configuration(project: Project, defaultConfigurationFileName: String) {
 
-    /** The default configuration file name. */
-    abstract val defaultConfigurationFileName: String
+    /** The resolved default configuration file. */
+    protected val resolvedDefaultConfigurationFile = resource(defaultConfigurationFileName)
 
     /** The stringified path to the configuration file. */
     val configFile: Property<String> = project.objects.property(String::class.java)
-        .apply { convention(project.resolveOrFromResource(defaultConfigurationFileName).absolutePath) }
+        .convention(defaultConfigurationFileName)
+
+    /** The resolved configuration file. */
+    internal val resolvedConfigurationFile: Provider<File> = configFile
+        .map { project.resolveOrElse(it, resolvedDefaultConfigurationFile) }
 }
 
 /** The configuration for scalafmt linter. */
-class ScalafmtConfiguration(project: Project) : Configuration(project) {
-
-    override val defaultConfigurationFileName: String
-        get() = DEFAULT_SCALAFMT_CONFIG_FILE
+class ScalafmtConfiguration(project: Project) : Configuration(project, DEFAULT_SCALAFMT_CONFIG_FILE) {
 
     /** Computes the version of scalafmt from [configFile]. */
-    internal val version = File(configFile.get())
+    internal fun version() = resolvedConfigurationFile.get()
         .readText()
         .let { """version\s*=\s*([\d.]+)""".toRegex().find(it)?.groupValues?.get(1) }
         ?: error("Missing required 'version' parameter in scalafmt configuration")
@@ -34,14 +36,11 @@ class ScalafmtConfiguration(project: Project) : Configuration(project) {
 }
 
 /** The configuration for scalafix linter. */
-class ScalafixConfiguration(project: Project) : Configuration(project) {
-
-    override val defaultConfigurationFileName: String
-        get() = DEFAULT_SCALAFIX_CONFIG_FILE
+class ScalafixConfiguration(project: Project) : Configuration(project, DEFAULT_SCALAFIX_CONFIG_FILE) {
 
     /** The compilation options to add to the Scala compiler for the default configuration. */
-    internal val defaultCompilationOptions: Set<String> = configFile
-        .takeIf { File(it.get()).absolutePath == resource(defaultConfigurationFileName).absolutePath }
+    internal val defaultCompilationOptions: Set<String> = resolvedConfigurationFile
+        .takeIf { it.get().absolutePath == resolvedDefaultConfigurationFile.absolutePath }
         ?.let { setOf(REPORT_UNUSED_OPTION) }
         .orEmpty()
 

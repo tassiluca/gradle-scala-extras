@@ -9,10 +9,12 @@ internal fun resource(path: String, packageStructure: String = "io/github/ltassi
     }.toURI(),
 )
 
-internal fun File.contains(filename: String): Boolean {
-    require(exists() && isDirectory) { "File $this does not exist or is not a directory" }
-    return listFiles()?.any { it.name == filename } ?: false
+internal fun Project.resolveOrFromResource(filename: String): File =
+    resolveOr(filename) { resource(filename) }
+
+internal fun Project.resolveOrElse(filename: String, orElse: File): File = resolveOr(filename) {
+    orElse.also { require(it.exists()) { "File $it doesn't exist." } }
 }
 
-internal fun Project.resolveOrFromResource(filename: String): File =
-    if (rootDir.contains(filename)) rootDir.resolve(filename) else resource(filename)
+private fun Project.resolveOr(filename: String, orElseStrategy: () -> File) =
+    rootDir.resolve(filename).takeIf { it.exists() } ?: orElseStrategy()

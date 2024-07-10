@@ -22,18 +22,22 @@ class ScalaQAPlugin : Plugin<Project> {
     }
 
     private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
-        logger.info("Picking up scalafmt configuration from ${configuration.configFile.get()}")
-        logger.info("Using scalafmt version ${configuration.version}")
-        configureExtension<ScalafmtExtension> {
-            configFilePath = configuration.configFile.get()
+        afterEvaluate {
+            logger.info("Picking up scalafmt configuration from ${configuration.resolvedConfigurationFile.get()}")
+            logger.info("Using scalafmt version ${configuration.version()}")
+            configureExtension<ScalafmtExtension> {
+                configFilePath = configuration.resolvedConfigurationFile.get().absolutePath
+            }
         }
         project.tasks.findByName("check")?.dependsOn("checkScalafmtAll")
     }
 
     private fun Project.configureScalafix(configuration: ScalafixConfiguration) {
-        logger.info("Picking up scalafix configuration from ${configuration.configFile.get()}")
-        configureExtension<ScalafixExtension> {
-            setConfigFile(configuration.configFile.get())
+        afterEvaluate {
+            logger.info("Picking up scalafix configuration from ${configuration.resolvedConfigurationFile.get()}")
+            configureExtension<ScalafixExtension> {
+                setConfigFile(configuration.resolvedConfigurationFile.get().absolutePath)
+            }
         }
         tasks.withType(ScalaCompile::class.java) {
             it.scalaCompileOptions.additionalParameters = configuration.defaultCompilationOptions.toList()

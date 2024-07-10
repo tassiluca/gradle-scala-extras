@@ -20,6 +20,10 @@ class ScalaQAPluginTest : FreeSpec({
             Testkit.projectTest("failing")
         }
 
+        "with custom configuration exploiting conventions" {
+            Testkit.projectTest("conventional-custom")
+        }
+
         "with custom configuration" {
             Testkit.projectTest("custom")
         }
