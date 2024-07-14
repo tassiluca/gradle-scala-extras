@@ -21,3 +21,20 @@ tests:
           # Scalafix output
           - "-import scala.Nil"   # Main.scala - unused import
           - "-import scala.Some"  # MainTest.scala - unused import
+  - description: "Malformatted sources are re-formatted"
+    configuration:
+      tasks:
+        - format
+      options:
+        - --stacktrace
+        - --info
+    expectation:
+      result: success
+      outcomes:
+        success:
+          - scalafmt
+          - testScalafmt
+          - scalafmtAll
+          - scalafixMain
+          - scalafixTest
+          - scalafix

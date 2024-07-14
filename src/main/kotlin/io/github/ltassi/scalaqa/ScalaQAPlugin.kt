@@ -19,6 +19,7 @@ class ScalaQAPlugin : Plugin<Project> {
         val extension = project.extensions.create("scalaQA", ScalaQAExtension::class.java, project)
         project.configureScalaFmt(extension.scalaFmtConfiguration)
         project.configureScalafix(extension.scalafixConfiguration)
+        project.configureFormatTask()
     }
 
     private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
@@ -29,7 +30,7 @@ class ScalaQAPlugin : Plugin<Project> {
                 configFilePath = configuration.resolvedConfigurationFile.get().absolutePath
             }
         }
-        project.tasks.findByName("check")?.dependsOn("checkScalafmtAll")
+        tasks.findByName(CHECK_TASK)?.dependsOn(CHECK_SCALAFMT_TASK)
     }
 
     private fun Project.configureScalafix(configuration: ScalafixConfiguration) {
@@ -44,7 +45,21 @@ class ScalaQAPlugin : Plugin<Project> {
         }
     }
 
+    private fun Project.configureFormatTask() = tasks.apply {
+        register("format") {
+            it.group = "Verification"
+            it.description = "Format the Scala codebase using linting tools."
+            it.dependsOn(SCALAFIX_TASK, SCALAFMT_TASK)
+        }
+        getByName(SCALAFMT_TASK).mustRunAfter(SCALAFIX_TASK)
+    }
+
     companion object {
+        private const val SCALAFIX_TASK = "scalafix"
+        private const val SCALAFMT_TASK = "scalafmtAll"
+        private const val CHECK_TASK = "check"
+        private const val CHECK_SCALAFMT_TASK = "checkScalafmtAll"
+
         private inline fun <reified T : Any> Project.configureExtension(crossinline action: T.() -> Unit) {
             extensions.configure(T::class.java) { it.action() }
         }
