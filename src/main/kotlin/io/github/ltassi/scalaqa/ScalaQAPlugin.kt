@@ -16,9 +16,9 @@ class ScalaQAPlugin : Plugin<Project> {
             apply(ScalafmtPlugin::class.java)
             apply(ScalafixPlugin::class.java)
         }
-        val extension = project.extensions.create("scalaQA", ScalaQAExtension::class.java, project)
-        project.configureScalaFmt(extension.scalaFmtConfiguration)
-        project.configureScalafix(extension.scalafixConfiguration)
+        val extension = project.extensions.create("scalaExtras", ScalaExtrasExtension::class.java, project)
+        project.configureScalaFmt(extension.qa.scalafmtConfiguration)
+        project.configureScalafix(extension.qa.scalafixConfiguration)
         project.configureFormatTask()
     }
 

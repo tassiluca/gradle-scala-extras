@@ -21,11 +21,13 @@ tasks.test {
     }
 }
 
-scalaQA {
-    scalafix {
-        configFile = "qa/custom-scalafix.conf"
-    }
-    scalafmt {
-        configFile = "qa/custom-scalafmt.conf"
+scalaExtras {
+    qa {
+        scalafix {
+            configFile = "qa/custom-scalafix.conf"
+        }
+        scalafmt {
+            configFile = "qa/custom-scalafmt.conf"
+        }
     }
 }
