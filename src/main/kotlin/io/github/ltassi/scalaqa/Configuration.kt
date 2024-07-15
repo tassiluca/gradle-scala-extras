@@ -39,10 +39,12 @@ class ScalafmtConfiguration(project: Project) : Configuration(project, DEFAULT_S
 class ScalafixConfiguration(project: Project) : Configuration(project, DEFAULT_SCALAFIX_CONFIG_FILE) {
 
     /** The compilation options to add to the Scala compiler for the default configuration. */
-    internal val defaultCompilationOptions: Set<String> = resolvedConfigurationFile
-        .takeIf { it.get().absolutePath == resolvedDefaultConfigurationFile.absolutePath }
-        ?.let { setOf(REPORT_UNUSED_OPTION) }
-        .orEmpty()
+    internal val defaultCompilationOptions: Set<String> by lazy {
+        resolvedConfigurationFile
+            .takeIf { it.get().absolutePath == resolvedDefaultConfigurationFile.absolutePath }
+            ?.let { setOf(REPORT_UNUSED_OPTION) }
+            .orEmpty()
+    }
 
     companion object {
         /** The default scalafix configuration file name. */
