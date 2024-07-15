@@ -1,5 +1,6 @@
 package io.github.ltassi.scalaqa
 
+import io.github.ltassi.scalaqa.ScalaCompilerOptions.SCALA3_REPORT_UNUSED
 import org.gradle.api.Project
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
@@ -42,15 +43,12 @@ class ScalafixConfiguration(project: Project) : Configuration(project, DEFAULT_S
     internal val defaultCompilationOptions: Set<String> by lazy {
         resolvedConfigurationFile
             .takeIf { it.get().absolutePath == resolvedDefaultConfigurationFile.absolutePath }
-            ?.let { setOf(REPORT_UNUSED_OPTION) }
+            ?.let { setOf(SCALA3_REPORT_UNUSED) }
             .orEmpty()
     }
 
     companion object {
         /** The default scalafix configuration file name. */
         private const val DEFAULT_SCALAFIX_CONFIG_FILE = ".scalafix.conf"
-
-        /** Scala 3 compilation parameter to report unused code elements. */
-        private const val REPORT_UNUSED_OPTION = "-Wunused:all"
     }
 }

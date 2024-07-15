@@ -21,6 +21,7 @@ tests:
           # Scalafix output
           - "-import scala.Nil"   # Main.scala - unused import
           - "-import scala.Some"  # MainTest.scala - unused import
+
   - description: "Malformatted sources are re-formatted"
     configuration:
       tasks:

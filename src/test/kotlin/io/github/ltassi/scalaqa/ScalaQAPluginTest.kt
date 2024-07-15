@@ -12,6 +12,10 @@ class ScalaQAPluginTest : FreeSpec({
     }
 
     "Plugin applies correctly to a project" - {
+        "with custom compiler options" {
+            Testkit.projectTest("custom-options")
+        }
+
         "with sources that are properly formatted" {
             Testkit.projectTest("working")
         }

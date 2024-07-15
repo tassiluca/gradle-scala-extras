@@ -1,0 +1,14 @@
+tests:
+  - description: "Custom compiler options"
+    configuration:
+      tasks:
+        - clean
+        - build
+      options:
+        - --stacktrace
+        - --info
+    expectation:
+      result: success
+      output:
+        contains:
+          - "Additional compiler options: [-explain, -Wunused:all, -Werror]"

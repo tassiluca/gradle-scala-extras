@@ -20,3 +20,9 @@ tasks.test {
         includeEngines("scalatest")
     }
 }
+
+scalaExtras {
+    qa {
+        allWarningsAsErrors = false
+    }
+}

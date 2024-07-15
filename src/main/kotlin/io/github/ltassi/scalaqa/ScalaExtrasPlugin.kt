@@ -3,6 +3,7 @@ package io.github.ltassi.scalaqa
 import cz.augi.gradle.scalafmt.ScalafmtPlugin
 import io.github.cosmicsilence.scalafix.ScalafixExtension
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
+import io.github.ltassi.scalaqa.ScalaCompilerOptions.FAIL_ON_WARNINGS
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.scala.ScalaCompile
@@ -53,7 +54,9 @@ class ScalaExtrasPlugin : Plugin<Project> {
     }
 
     private fun Project.configureCompilerOptions(extension: ScalaExtrasExtension) = afterEvaluate {
-        val options = extension.options.plus(extension.qa.scalafixConfiguration.defaultCompilationOptions)
+        val options = extension.options
+            .plus(extension.qa.scalafixConfiguration.defaultCompilationOptions)
+            .run { if (extension.qa.allWarningsAsErrors.get()) plus(FAIL_ON_WARNINGS) else this }
         logger.info("Additional compiler options: $options")
         tasks.withType(ScalaCompile::class.java) { compileTask ->
             compileTask.scalaCompileOptions.additionalParameters = options.toList()
