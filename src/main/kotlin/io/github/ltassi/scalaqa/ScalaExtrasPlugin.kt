@@ -8,8 +8,8 @@ import org.gradle.api.Project
 import org.gradle.api.tasks.scala.ScalaCompile
 import cz.augi.gradle.scalafmt.PluginExtension as ScalafmtExtension
 
-/** The scala QA plugin entry point. */
-class ScalaQAPlugin : Plugin<Project> {
+/** The scala extras plugin entry point. */
+class ScalaExtrasPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         with(project.plugins) {
