@@ -20,6 +20,7 @@ class ScalaExtrasPlugin : Plugin<Project> {
         project.configureScalaFmt(extension.qa.scalafmtConfiguration)
         project.configureScalafix(extension.qa.scalafixConfiguration)
         project.configureFormatTask()
+        project.configureCompilerOptions(extension)
     }
 
     private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
@@ -40,9 +41,6 @@ class ScalaExtrasPlugin : Plugin<Project> {
                 setConfigFile(configuration.resolvedConfigurationFile.get().absolutePath)
             }
         }
-        tasks.withType(ScalaCompile::class.java) {
-            it.scalaCompileOptions.additionalParameters = configuration.defaultCompilationOptions.toList()
-        }
     }
 
     private fun Project.configureFormatTask() = tasks.apply {
@@ -52,6 +50,14 @@ class ScalaExtrasPlugin : Plugin<Project> {
             it.dependsOn(SCALAFIX_TASK, SCALAFMT_TASK)
         }
         getByName(SCALAFMT_TASK).mustRunAfter(SCALAFIX_TASK)
+    }
+
+    private fun Project.configureCompilerOptions(extension: ScalaExtrasExtension) = afterEvaluate {
+        val options = extension.options.plus(extension.qa.scalafixConfiguration.defaultCompilationOptions)
+        logger.info("Additional compiler options: $options")
+        tasks.withType(ScalaCompile::class.java) { compileTask ->
+            compileTask.scalaCompileOptions.additionalParameters = options.toList()
+        }
     }
 
     companion object {
