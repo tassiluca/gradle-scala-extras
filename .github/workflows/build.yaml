@@ -25,9 +25,9 @@ jobs:
       - name: Move project to C drive if on Windows
         if: matrix.os == 'windows'
         run: |
-          mkdir -p /c/gradle-scala-qa
-          mv ./* .* /c/gradle-scala-qa
-          ls -alh /c/gradle-scala-qa
+          mkdir -p /c/gradle-scala-extras
+          mv ./* .* /c/gradle-scala-extras
+          ls -alh /c/gradle-scala-extras
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -39,18 +39,18 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
         run: |
           if [[ "$RUNNER_OS" == "Windows" ]]; then
-            cd /c/gradle-scala-qa
+            cd /c/gradle-scala-extras
           fi
           ./gradlew classes testClasses
       - name: Test
         run: |
           if [[ "$RUNNER_OS" == "Windows" ]]; then
-              cd /c/gradle-scala-qa
+              cd /c/gradle-scala-extras
           fi
           ./gradlew test
       - name: Check
         run: |
           if [[ "$RUNNER_OS" == "Windows" ]]; then
-              cd /c/gradle-scala-qa
+              cd /c/gradle-scala-extras
           fi
           ./gradlew check
