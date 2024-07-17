@@ -1,9 +1,9 @@
-package io.github.ltassi.scalaqa
+package io.github.tassiluca.scalaextras
 
 import cz.augi.gradle.scalafmt.ScalafmtPlugin
 import io.github.cosmicsilence.scalafix.ScalafixExtension
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
-import io.github.ltassi.scalaqa.ScalaCompilerOptions.FAIL_ON_WARNINGS
+import io.github.tassiluca.scalaextras.ScalaCompilerOptions.FAIL_ON_WARNINGS
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.scala.ScalaCompile

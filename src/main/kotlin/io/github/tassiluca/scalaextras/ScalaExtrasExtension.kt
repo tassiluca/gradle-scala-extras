@@ -1,4 +1,4 @@
-package io.github.ltassi.scalaqa
+package io.github.tassiluca.scalaextras
 
 import org.gradle.api.Project
 import org.gradle.api.provider.Property

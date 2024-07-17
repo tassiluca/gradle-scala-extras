@@ -1,6 +1,6 @@
 plugins {
     scala
-    id("io.github.ltassi.gradle-scala-qa")
+    id("io.github.tassiluca.gradle-scala-extras")
 }
 
 repositories {

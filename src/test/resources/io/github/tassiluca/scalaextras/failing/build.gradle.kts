@@ -1,6 +1,6 @@
 plugins {
     scala
-    id("io.github.ltassi.gradle-scala-qa")
+    id("io.github.tassiluca.gradle-scala-extras")
 }
 
 repositories {
@@ -23,11 +23,6 @@ tasks.test {
 
 scalaExtras {
     qa {
-        scalafix {
-            configFile = "qa/custom-scalafix.conf"
-        }
-        scalafmt {
-            configFile = "qa/custom-scalafmt.conf"
-        }
+        allWarningsAsErrors = false
     }
 }

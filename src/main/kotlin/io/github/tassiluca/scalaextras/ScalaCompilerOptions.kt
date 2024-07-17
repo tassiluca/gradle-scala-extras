@@ -1,4 +1,4 @@
-package io.github.ltassi.scalaqa
+package io.github.tassiluca.scalaextras
 
 /** A subset of the Scala compiler options needed for the plugin implementation. */
 object ScalaCompilerOptions {

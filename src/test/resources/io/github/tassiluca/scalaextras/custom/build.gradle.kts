@@ -1,6 +1,6 @@
 plugins {
     scala
-    id("io.github.ltassi.gradle-scala-qa")
+    id("io.github.tassiluca.gradle-scala-extras")
 }
 
 repositories {
@@ -18,5 +18,16 @@ dependencies {
 tasks.test {
     useJUnitPlatform {
         includeEngines("scalatest")
+    }
+}
+
+scalaExtras {
+    qa {
+        scalafix {
+            configFile = "qa/custom-scalafix.conf"
+        }
+        scalafmt {
+            configFile = "qa/custom-scalafmt.conf"
+        }
     }
 }

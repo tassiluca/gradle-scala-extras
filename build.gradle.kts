@@ -7,7 +7,17 @@ plugins {
     alias(libs.plugins.kotlin.qa)
 }
 
-group = "io.github.ltassi"
+group = "io.github.tassiluca"
+inner class ProjectInfo {
+    val longName = "Gradle Scala Extras Plugin"
+    val description = "A plugin to enhance the Scala gradle core plugin with quality assurance tools"
+    val website = "https://github.com/tassiluca/$name"
+    val vcsUrl = "$website.git"
+    val scm = "scm:git:$website.git"
+    val pluginImplementationClass = "$group.scalaextras.ScalaExtrasPlugin"
+    val tags = listOf("scala", "qa", "quality assurance", "static analysis")
+}
+val projectInfo = ProjectInfo()
 
 repositories {
     mavenCentral()
@@ -40,5 +50,19 @@ tasks.withType<Test> {
         showStandardStreams = true
         events(*TestLogEvent.values())
         exceptionFormat = TestExceptionFormat.FULL
+    }
+}
+
+gradlePlugin {
+    plugins {
+        website = projectInfo.website
+        vcsUrl = projectInfo.vcsUrl
+        create("") {
+            id = "${project.group}.${project.name}"
+            displayName = projectInfo.longName
+            description = projectInfo.description
+            implementationClass = projectInfo.pluginImplementationClass
+            tags.set(projectInfo.tags)
+        }
     }
 }

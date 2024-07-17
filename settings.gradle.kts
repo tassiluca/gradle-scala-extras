@@ -3,7 +3,7 @@ plugins {
     id("org.danilopianini.gradle-pre-commit-git-hooks") version "2.0.7"
 }
 
-rootProject.name = "gradle-scala-qa"
+rootProject.name = "gradle-scala-extras"
 
 develocity {
     buildScan {

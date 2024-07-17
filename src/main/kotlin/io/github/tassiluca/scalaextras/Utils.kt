@@ -1,9 +1,9 @@
-package io.github.ltassi.scalaqa
+package io.github.tassiluca.scalaextras
 
 import org.gradle.api.Project
 import java.io.File
 
-internal fun resource(path: String, packageStructure: String = "io/github/ltassi/scalaqa/"): File = File(
+internal fun resource(path: String, packageStructure: String = "io/github/tassiluca/scalaextras/"): File = File(
     checkNotNull(Thread.currentThread().contextClassLoader.getResource(packageStructure + path)) {
         "Unable to access resource $path"
     }.toURI(),

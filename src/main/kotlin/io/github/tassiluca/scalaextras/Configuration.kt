@@ -1,6 +1,6 @@
-package io.github.ltassi.scalaqa
+package io.github.tassiluca.scalaextras
 
-import io.github.ltassi.scalaqa.ScalaCompilerOptions.SCALA3_REPORT_UNUSED
+import io.github.tassiluca.scalaextras.ScalaCompilerOptions.SCALA3_REPORT_UNUSED
 import org.gradle.api.Project
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.Provider
