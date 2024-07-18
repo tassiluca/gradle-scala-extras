@@ -17,40 +17,48 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu, macos, windows]
-        jvm_version: [21] # [11, 17, 21]
+        jvm_version: [21]
     runs-on: ${{ matrix.os }}-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Move project to C drive if on Windows
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Move project to C drive on Windows
         if: matrix.os == 'windows'
         run: |
           mkdir -p /c/gradle-scala-extras
-          mv ./* .* /c/gradle-scala-extras
+          cp -r ./* .* /c/gradle-scala-extras
           ls -alh /c/gradle-scala-extras
-      - name: Set up JDK
-        uses: actions/setup-java@v3
+      - name: Build, test, check and dry deployment
+        uses: DanySK/build-check-deploy-gradle-action@3.3.0
         with:
-          distribution: 'adopt'
-          java-version: ${{ matrix.jvm_version }}
-      - name: Build
-        env:
-          GH_USERNAME: ${{ env.GH_USERNAME }}
-          TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          if [[ "$RUNNER_OS" == "Windows" ]]; then
-            cd /c/gradle-scala-extras
-          fi
-          ./gradlew classes testClasses
-      - name: Test
-        run: |
-          if [[ "$RUNNER_OS" == "Windows" ]]; then
+          build-command: |
+            if [[ "$RUNNER_OS" == "Windows" ]]; then
               cd /c/gradle-scala-extras
-          fi
-          ./gradlew test
-      - name: Check
-        run: |
-          if [[ "$RUNNER_OS" == "Windows" ]]; then
-              cd /c/gradle-scala-extras
-          fi
-          ./gradlew check
+            fi
+            ./gradlew classes testClasses --parallel
+          check-command: |
+            if [[ "$RUNNER_OS" == "Windows" ]]; then
+                cd /c/gradle-scala-extras
+            fi
+            ./gradlew check --parallel
+          deploy-command: >-
+            ./gradlew
+            uploadKotlinOSSRHToMavenCentralNexus
+            uploadPluginMavenToMavenCentralNexus
+            uploadPluginMarkerMavenToMavenCentralNexus
+            close
+            drop
+            --parallel
+          should-run-codecov: false
+          should-deploy: >-
+            ${{
+              runner.os == 'Linux'
+              && !github.event.repository.fork
+              && github.event_name != 'pull_request'
+            }}
+          maven-central-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          maven-central-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          signing-key: ${{ secrets.SIGNING_KEY }}
+          signing-password: ${{ secrets.SIGNING_PASSWORD }}
