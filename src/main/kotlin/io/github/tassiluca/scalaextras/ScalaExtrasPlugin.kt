@@ -3,9 +3,12 @@ package io.github.tassiluca.scalaextras
 import cz.augi.gradle.scalafmt.ScalafmtPlugin
 import io.github.cosmicsilence.scalafix.ScalafixExtension
 import io.github.cosmicsilence.scalafix.ScalafixPlugin
+import io.github.cosmicsilence.scalafix.ScalafixTask
 import io.github.tassiluca.scalaextras.ScalaCompilerOptions.FAIL_ON_WARNINGS
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.Task
+import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.scala.ScalaCompile
 import cz.augi.gradle.scalafmt.PluginExtension as ScalafmtExtension
 
@@ -25,24 +28,30 @@ class ScalaExtrasPlugin : Plugin<Project> {
     }
 
     private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
-        afterEvaluate {
-            logger.info("Picking up scalafmt configuration from ${configuration.resolvedConfigurationFile.get()}")
-            logger.info("Using scalafmt version ${configuration.version()}")
-            configureExtension<ScalafmtExtension> {
-                configFilePath = configuration.resolvedConfigurationFile.get().absolutePath
-            }
+        configureExtension<ScalafmtExtension> {
+            configFilePath = configuration.generatedConfigurationFile.absolutePath
         }
+        val populateTask = populateConfigurationTask(configuration)
+        tasks.filter { it.name.contains("scalafmt", ignoreCase = true) && it.name != populateTask.get().name }
+            .forEach { it.dependsOn(populateTask) }
         tasks.findByName(CHECK_TASK)?.dependsOn(CHECK_SCALAFMT_TASK)
     }
 
     private fun Project.configureScalafix(configuration: ScalafixConfiguration) {
-        afterEvaluate {
-            logger.info("Picking up scalafix configuration from ${configuration.resolvedConfigurationFile.get()}")
-            configureExtension<ScalafixExtension> {
-                setConfigFile(configuration.resolvedConfigurationFile.get().absolutePath)
+        configureExtension<ScalafixExtension> {
+            setConfigFile(configuration.generatedConfigurationFile.absolutePath)
+        }
+        val populateTask = populateConfigurationTask(configuration)
+        tasks.withType(ScalafixTask::class.java) { it.dependsOn(populateTask) }
+    }
+
+    private fun Project.populateConfigurationTask(configuration: Configuration): TaskProvider<Task> =
+        tasks.register("populate${configuration.javaClass.simpleName}") {
+            it.doLast {
+                logger.info("Picking up configuration ${configuration.resolvedConfiguration.get()}")
+                configuration.generatedConfigurationFile.createWithContent(configuration.resolvedConfiguration.get())
             }
         }
-    }
 
     private fun Project.configureFormatTask() = tasks.apply {
         register("format") {
@@ -55,7 +64,7 @@ class ScalaExtrasPlugin : Plugin<Project> {
 
     private fun Project.configureCompilerOptions(extension: ScalaExtrasExtension) = afterEvaluate {
         val options = extension.options
-            .plus(extension.qa.scalafixConfiguration.defaultCompilationOptions)
+            .plus(extension.qa.scalafixConfiguration.defaultCompilationOptions())
             .run { if (extension.qa.allWarningsAsErrors.get()) plus(FAIL_ON_WARNINGS) else this }
         logger.info("Additional compiler options: $options")
         tasks.withType(ScalaCompile::class.java) { compileTask ->

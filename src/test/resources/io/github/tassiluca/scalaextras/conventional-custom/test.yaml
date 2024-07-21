@@ -20,4 +20,5 @@ tests:
           - checkScalafixTest
       output:
         contains:
-          - "Using scalafmt version 3.8.0"
+          - "Custom scalafix configuration exploiting conventions"
+          - "Custom scalafmt configuration exploiting conventions"

@@ -20,4 +20,5 @@ tests:
           - checkScalafixTest
       output:
         contains:
-          - "Using scalafmt version 3.8.0"
+          - "Custom scalafix configuration in qa/ folder"
+          - "Custom scalafmt configuration in qa/ folder"
