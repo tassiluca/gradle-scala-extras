@@ -1,3 +1,14 @@
+## [1.0.1](https://github.com/tassiluca/gradle-scala-extras/compare/1.0.0...1.0.1) (2024-07-22)
+
+### Bug Fixes
+
+* resources must be read as text and loaded upfront in projects linked as jar ([8e46b38](https://github.com/tassiluca/gradle-scala-extras/commit/8e46b38d828fa57202d173e23918e5bcd753c983))
+
+### General maintenance
+
+* add README.md ([f696683](https://github.com/tassiluca/gradle-scala-extras/commit/f69668375bb8ea0d8cf2b4118536e5712cc47526))
+* create LICENSE ([65ed27f](https://github.com/tassiluca/gradle-scala-extras/commit/65ed27f40bdaf5059d3c8606d717ffd697e70aae))
+
 ## 1.0.0 (2024-07-18)
 
 ### ⚠ BREAKING CHANGES
