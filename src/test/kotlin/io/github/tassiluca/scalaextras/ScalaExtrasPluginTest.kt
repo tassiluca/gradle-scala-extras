@@ -39,6 +39,6 @@ class ScalaExtrasPluginTest : FreeSpec({
             DEFAULT_TEST_FOLDER + "io${separator}github${separator}tassiluca${separator}scalaextras$separator"
 
         private fun Testkit.projectTest(folder: String) =
-            test(PROJECT_NAME, projectsBaseFolder + folder, forwardOutput = true)
+            test(PROJECT_NAME, projectsBaseFolder + folder, forwardOutput = false)
     }
 }
