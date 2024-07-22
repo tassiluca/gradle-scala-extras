@@ -33,6 +33,11 @@ jobs:
       matrix:
         os: [ubuntu-22.04, macos-14, windows-2022]
         jvm_version: [21]
+    concurrency:
+      # If multiple commits are pushed to the same branch or added to the same PR,
+      # only the workflow for the latest commit will be run
+      group: build-${{ github.workflow }}-${{ matrix.os }}-${{ github.event.number || github.ref }}
+      cancel-in-progress: true
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
@@ -93,6 +98,9 @@ jobs:
         github.event_name != 'pull_request'
         || github.event.pull_request.head.repo.full_name == github.repository
       )
+    concurrency:
+      # Ensuring sequential execution of releases
+      group: release
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout the whole repository history
