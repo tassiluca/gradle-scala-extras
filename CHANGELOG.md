@@ -1,3 +1,23 @@
+## [2.0.0](https://github.com/tassiluca/gradle-scala-extras/compare/1.0.1...2.0.0) (2024-07-22)
+
+### ⚠ BREAKING CHANGES
+
+* This change may cause build failures for projects depending on the previous default configurations.
+
+### Features
+
+* change default configuration for scalafmt and scalafix ([6665035](https://github.com/tassiluca/gradle-scala-extras/commit/66650358e7bc05bfff06c9140f6d74e99407ef14))
+
+### Tests
+
+* remove gradle output forward ([5fc705c](https://github.com/tassiluca/gradle-scala-extras/commit/5fc705c0dc55be609a484901d085cc6d8af83cce))
+
+### Build and continuous integration
+
+* add concurrency constraints ([e435696](https://github.com/tassiluca/gradle-scala-extras/commit/e4356963d8854e6ae4c5b0c7a17af96c260c4995))
+* add success and dispatcher jobs ([3e7ebce](https://github.com/tassiluca/gradle-scala-extras/commit/3e7ebce76b40d007c3e9f1f0bcd6599799ada489))
+* change release order, first maven central then gradle plugins portal ([7f71d58](https://github.com/tassiluca/gradle-scala-extras/commit/7f71d58c3c9a4893b501e36c36e1f221c9414adb))
+
 ## [1.0.1](https://github.com/tassiluca/gradle-scala-extras/compare/1.0.0...1.0.1) (2024-07-22)
 
 ### Bug Fixes
