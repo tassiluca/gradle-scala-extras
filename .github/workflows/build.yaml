@@ -30,9 +30,9 @@ jobs:
     needs:
       - Dispatcher
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-22.04, macos-14, windows-2022]
-        jvm_version: [21]
     concurrency:
       # If multiple commits are pushed to the same branch or added to the same PR,
       # only the workflow for the latest commit will be run
@@ -130,6 +130,7 @@ jobs:
 
   Success:
     needs:
+      - Build-Test-Check-Dry-Deploy
       - Deploy
     if: >- # run if any needed job failed or if no needed job was cancelled
       always() && (
