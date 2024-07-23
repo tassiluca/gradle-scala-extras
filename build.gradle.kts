@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.publishOnCentral)
     alias(libs.plugins.gitSemanticVersioning)
     alias(libs.plugins.gradlePluginPublish)
+    alias(libs.plugins.multiJvmTesting)
 }
 
 group = "io.github.tassiluca"
@@ -28,8 +29,15 @@ repositories {
     mavenCentral()
 }
 
+multiJvm {
+    /* By default, compile with Java 8 and test with the supported LTS versions and the latest. */
+    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+}
+
 dependencies {
-    implementation(gradleApi())
+    api(gradleApi())
+    api(gradleKotlinDsl())
+    implementation(kotlin("stdlib-jdk8"))
     implementation(libs.gradle.scalafmt)
     implementation(libs.gradle.scalafix)
     testImplementation(gradleTestKit())
@@ -37,7 +45,7 @@ dependencies {
     testImplementation(libs.gradle.plugins.testkit)
 }
 
-tasks.withType<Test> {
+tasks.withType<Test>().configureEach {
     useJUnitPlatform()
     testLogging {
         showCauses = true

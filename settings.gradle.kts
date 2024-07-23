@@ -1,6 +1,8 @@
 plugins {
     id("com.gradle.develocity") version "3.17.5"
     id("org.danilopianini.gradle-pre-commit-git-hooks") version "2.0.7"
+    /* Provides a repository for downloading JVMs, provisioning them automatically if missing. */
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
 rootProject.name = "gradle-scala-extras"
