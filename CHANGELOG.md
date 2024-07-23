@@ -1,3 +1,13 @@
+## [2.0.1](https://github.com/tassiluca/gradle-scala-extras/compare/2.0.0...2.0.1) (2024-07-23)
+
+### Bug Fixes
+
+* configure multiJvm plugin to target all LTS from java 8 ([ac8e729](https://github.com/tassiluca/gradle-scala-extras/commit/ac8e7293b91b5755ecc11cc63dddcda9f52bfa3e))
+
+### Build and continuous integration
+
+* disable fail fast and add the Build-Test-Check-Dry-Deploy step as needed for the Success one ([c9490f3](https://github.com/tassiluca/gradle-scala-extras/commit/c9490f38b6c388409a2349d760ea608b2981de6b))
+
 ## [2.0.0](https://github.com/tassiluca/gradle-scala-extras/compare/1.0.1...2.0.0) (2024-07-22)
 
 ### ⚠ BREAKING CHANGES
