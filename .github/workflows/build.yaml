@@ -41,7 +41,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           fetch-depth: 0
       - name: Get repository name
@@ -54,7 +54,7 @@ jobs:
           cp -r ./* .* /c/${{ steps.get_repo_name.outputs.repo_name }}
           ls -alh /c/${{ steps.get_repo_name.outputs.repo_name }}
       - name: Build, test, check and dry deployment
-        uses: DanySK/build-check-deploy-gradle-action@3.3.0
+        uses: DanySK/build-check-deploy-gradle-action@5b38ef8095407322dfe6b1222b90f33adc4cc613 # 3.3.0
         with:
           build-command: |
             if [[ "$RUNNER_OS" == "Windows" ]]; then
@@ -104,14 +104,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout the whole repository history
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
         with:
           fetch-depth: 0
       - name: Setup Node
-        uses: actions/setup-node@v4.0.3
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           node-version-file: package.json
-      - uses: DanySK/build-check-deploy-gradle-action@3.4.0
+      - uses: DanySK/build-check-deploy-gradle-action@bbff3f69ead675f17eaf676eeaf3d4d40db88150 # 3.4.0
         with:
           build-command: true
           check-command: true
