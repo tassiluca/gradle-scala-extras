@@ -44,7 +44,9 @@
       "description": "Trigger a minor update on QA dependencies (as per Semantic Release configuration)",
       "matchPackageNames": [
         "io.github.cosmicsilence:gradle-scalafix",
-        "cz.augi:gradle-scalafmt",
+        "cz.augi:gradle-scalafmt"
+      ],
+      "matchDepNames": [
         "scalafmt"
       ],
       "semanticCommitScope": "api-deps"
