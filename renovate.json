@@ -14,14 +14,19 @@
     "npm:unpublishSafe"
   ],
   "automerge": true,
-  "assignees": [ "tassiluca" ],
+  "assignees": [
+    "tassiluca"
+  ],
   "minimumReleaseAge": "1 day",
   "prConcurrentLimit": 25,
   "prHourlyLimit": 0,
   "packageRules": [
     {
       "description": "CI updates must be tagged as `ci`",
-      "matchPaths": [".github/workflows/*.yml", ".github/workflows/*.yaml"],
+      "matchFileNames": [
+        ".github/workflows/*.yml",
+        ".github/workflows/*.yaml"
+      ],
       "semanticCommitType": "ci"
     },
     {
