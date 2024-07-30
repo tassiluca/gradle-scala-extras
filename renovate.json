@@ -1,0 +1,39 @@
+{
+  "configMigration": true,
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    "helpers:pinGitHubActionDigests",
+    ":pinDevDependencies",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":separateMajorReleases",
+    ":separatePatchReleases",
+    ":rebaseStalePrs",
+    ":enableVulnerabilityAlerts",
+    "npm:unpublishSafe"
+  ],
+  "automerge": true,
+  "assignees": [ "tassiluca" ],
+  "minimumReleaseAge": "1 day",
+  "prConcurrentLimit": 25,
+  "prHourlyLimit": 0,
+  "packageRules": [
+    {
+      "description": "CI updates must be tagged as `ci`",
+      "matchPaths": [".github/workflows/*.yml", ".github/workflows/*.yaml"],
+      "semanticCommitType": "ci"
+    },
+    {
+      "description": "Trigger a patch update on Gradle and Kotlin upgrades (as per Semantic Release configuration)",
+      "matchPackageNames": [
+        "gradle",
+        "org.jetbrains.kotlin.jvm",
+        "org.jetbrains.dokka",
+        "org.jetbrains.kotlin:kotlin-gradle-plugin",
+        "kotlin-monorepo"
+      ],
+      "semanticCommitScope": "core-deps"
+    }
+  ]
+}
