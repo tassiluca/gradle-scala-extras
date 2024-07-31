@@ -128,13 +128,10 @@ jobs:
     needs:
       - Build-Test-Check-Dry-Deploy
       - Deploy
-    if: >- # Requires that at least one needed job has failed, or all needed jobs have not been canceled or skipped
+    if: >- # Requires that at least one needed job has failed, or all needed jobs have not been canceled
       always() && (
         contains(join(needs.*.result, ','), 'failure')
-        || (
-          !contains(join(needs.*.result, ','), 'cancelled') 
-          && !contains(join(needs.*.result, ','), 'skipped')
-        )
+        || !contains(join(needs.*.result, ','), 'cancelled')
       )
     runs-on: ubuntu-22.04
     steps:
