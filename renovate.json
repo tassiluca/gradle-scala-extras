@@ -17,8 +17,6 @@
   "assignees": [
     "tassiluca"
   ],
-  "minimumReleaseAge": "1 day",
-  "prConcurrentLimit": 25,
   "prHourlyLimit": 0,
   "packageRules": [
     {
