@@ -92,12 +92,8 @@ jobs:
       packages: write
     needs:
       - Build-Test-Check-Dry-Deploy
-    if: >-
-      !github.event.repository.fork
-      && (
-        github.event_name != 'pull_request'
-        || github.event.pull_request.head.repo.full_name == github.repository
-      )
+    if: >- # Only react to push to the `master` branch of the main repository
+      !github.event.repository.fork && github.event_name != 'pull_request' && github.ref_name == 'master'
     concurrency:
       # Ensuring sequential execution of releases
       group: release
@@ -132,7 +128,7 @@ jobs:
     needs:
       - Build-Test-Check-Dry-Deploy
       - Deploy
-    if: >- # run if at least one needed job has failed or all needed jobs have not been cancelled or skipped
+    if: >- # Requires that at least one needed job has failed, or all needed jobs have not been canceled or skipped
       always() && (
         contains(join(needs.*.result, ','), 'failure')
         || (
