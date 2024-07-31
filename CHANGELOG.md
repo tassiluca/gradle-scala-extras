@@ -1,3 +1,24 @@
+## [2.1.0](https://github.com/tassiluca/gradle-scala-extras/compare/2.0.1...2.1.0) (2024-07-31)
+
+### Dependency updates
+
+* **api-deps:** update dependency scalafmt to v3.8.3 ([3406b55](https://github.com/tassiluca/gradle-scala-extras/commit/3406b55fc85fb09ab524fa7b638c4da170779a44))
+* **core-deps:** update dependency gradle to v8.9 ([e499334](https://github.com/tassiluca/gradle-scala-extras/commit/e49933472a0ef8edccc33956762193671dad542e))
+
+### Build and continuous integration
+
+* **deps:** pin dependencies ([9ec3e99](https://github.com/tassiluca/gradle-scala-extras/commit/9ec3e9961773bc9bdb9c871e5bdf70bbce7bcbd0))
+* include skipped jobs in 'success' conditional rules ([2a183ad](https://github.com/tassiluca/gradle-scala-extras/commit/2a183adb8d40da0bf5d4207f5a88dfd78b3b6fa9))
+
+### General maintenance
+
+* add renovate configuration ([ffa38f0](https://github.com/tassiluca/gradle-scala-extras/commit/ffa38f0676424215eb6978963523e2e2230a42cf))
+* **config:** migrate config renovate.json ([b6b7646](https://github.com/tassiluca/gradle-scala-extras/commit/b6b7646ed6e4f2e19fe4ed751647bb81f1cedbcf))
+* remove unusued spotless entry ([1fd50c4](https://github.com/tassiluca/gradle-scala-extras/commit/1fd50c4c5df03c2ccfe07993063be38cd33ea090))
+* **renovate:** remove 'prConcurrentLimit' and 'stabilityDays' ([c862f62](https://github.com/tassiluca/gradle-scala-extras/commit/c862f622e3c9dff77f48fa5e5e19142c4e8e2007))
+* update renovate config to trigger minor update on QA dependencies ([5e4be94](https://github.com/tassiluca/gradle-scala-extras/commit/5e4be94655f4e1c8e5ac3c9e1747008eef70f510))
+* use 'matchDepNames' for scalafmt dep ([18dd2a8](https://github.com/tassiluca/gradle-scala-extras/commit/18dd2a801527ed5fe79f0f7d37eb17c5ebbe3751))
+
 ## [2.0.1](https://github.com/tassiluca/gradle-scala-extras/compare/2.0.0...2.0.1) (2024-07-23)
 
 ### Bug Fixes
