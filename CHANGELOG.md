@@ -1,3 +1,31 @@
+## [2.1.1](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.0...2.1.1) (2024-08-14)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.10 ([19d49b0](https://github.com/tassiluca/gradle-scala-extras/commit/19d49b0104ecf08e153e8d4ab14c0644fe606be9))
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.0.10 ([0955e5d](https://github.com/tassiluca/gradle-scala-extras/commit/0955e5dbc2890b57d7a1c0dc85a8f764ddca8c74))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.93 ([6f8e6c1](https://github.com/tassiluca/gradle-scala-extras/commit/6f8e6c18b06310d4b4ca04f6f3f30d4f03500ef8))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.94 ([71bf047](https://github.com/tassiluca/gradle-scala-extras/commit/71bf0474a7bdd9d30ae73354f30ff8301c485582))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.95 ([76ccc69](https://github.com/tassiluca/gradle-scala-extras/commit/76ccc69d38108ed21c420cba463caef29d82ecfc))
+* **deps:** update node.js to 20.16 ([47d08a3](https://github.com/tassiluca/gradle-scala-extras/commit/47d08a3b0dcdb4990f2a190b8bcedf4beb996148))
+* **deps:** update plugin com.gradle.develocity to v3.17.6 ([ec21c64](https://github.com/tassiluca/gradle-scala-extras/commit/ec21c6470548e9a56355908d62102c75c285f9a7))
+* **deps:** update plugin kotlin-qa to v0.62.4 ([b83ed29](https://github.com/tassiluca/gradle-scala-extras/commit/b83ed29b553ee4387c502d37938f230b9534bcac))
+* **deps:** update plugin kotlin-qa to v0.65.0 ([8024dd2](https://github.com/tassiluca/gradle-scala-extras/commit/8024dd2542373e00d203c6ce78e2879baf06c922))
+* **deps:** update plugin kotlin-qa to v0.65.1 ([0772b91](https://github.com/tassiluca/gradle-scala-extras/commit/0772b91733fba1cb317fbeb4195d2303b0175a86))
+* **deps:** update plugin multijvmtesting to v1.2.2 ([3412c07](https://github.com/tassiluca/gradle-scala-extras/commit/3412c07c28f72736c3ddf209322fe4b94e3e5ce9))
+* **deps:** update plugin multijvmtesting to v1.2.3 ([e025685](https://github.com/tassiluca/gradle-scala-extras/commit/e02568521a3466c157e0e5df4c905583b526b528))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.8 ([2cad4a9](https://github.com/tassiluca/gradle-scala-extras/commit/2cad4a933ea1211064061d4db9bcb19dc415372b))
+* **deps:** update plugin publishoncentral to v5.1.4 ([2bd36dd](https://github.com/tassiluca/gradle-scala-extras/commit/2bd36dd67535257aac8cfa8b9fa58c0e6b2fcbe9))
+* **deps:** update plugin publishoncentral to v5.1.5 ([3475fc8](https://github.com/tassiluca/gradle-scala-extras/commit/3475fc8555a37f354d26db55a5b09f88ab4adef4))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.1 ([5b71f48](https://github.com/tassiluca/gradle-scala-extras/commit/5b71f485b3c4ec13129344f2ce91b8acff878beb))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.2 ([ee61d53](https://github.com/tassiluca/gradle-scala-extras/commit/ee61d538d425acd3103f5aa1b64d8fcc06b17cdc))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.3 ([901cd70](https://github.com/tassiluca/gradle-scala-extras/commit/901cd7034190458618d01119f58ec54dfb535c6f))
+* remove skipped check on 'success' job causing the skip of the job when the 'deploy' one is skipped ([4a3a30f](https://github.com/tassiluca/gradle-scala-extras/commit/4a3a30f3736f83249c83855aff8a41a3f4f19d89))
+* run deploy step only when pushed to the main branch of the repository ([f27b01d](https://github.com/tassiluca/gradle-scala-extras/commit/f27b01d7cb64ca30a94abfcaa5603181de54ee40))
+
 ## [2.1.0](https://github.com/tassiluca/gradle-scala-extras/compare/2.0.1...2.1.0) (2024-07-31)
 
 ### Dependency updates
