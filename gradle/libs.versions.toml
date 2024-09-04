@@ -14,7 +14,7 @@ kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm" ]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.66.0"
+kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.66.1"
 gradlePluginPublish = "com.gradle.plugin-publish:1.2.2"
 publishOnCentral = "org.danilopianini.publish-on-central:5.1.6"
 gitSemanticVersioning = "org.danilopianini.git-sensitive-semantic-versioning:3.1.7"
