@@ -1,3 +1,27 @@
+## [2.1.3](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.2...2.1.3) (2024-09-24)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.10.2 ([9dbd4fd](https://github.com/tassiluca/gradle-scala-extras/commit/9dbd4fd6f2b58556eb92b2079f477e050f52a423))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.103 ([7b86c62](https://github.com/tassiluca/gradle-scala-extras/commit/7b86c624471e32468863e87174ca2b25c4b59291))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.104 ([8c3f443](https://github.com/tassiluca/gradle-scala-extras/commit/8c3f443d189318a76dfdb4dd28130fbdcc827317))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.105 ([a79811a](https://github.com/tassiluca/gradle-scala-extras/commit/a79811a573e48da0c0a627636a1bdb94253e3fd1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.106 ([86893ff](https://github.com/tassiluca/gradle-scala-extras/commit/86893ffa31067ee55b4a2894408d01a90bfcfc15))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.107 ([33b2a54](https://github.com/tassiluca/gradle-scala-extras/commit/33b2a549fe798c6425f91db4cb406022b44dfa0b))
+* **deps:** update plugin com.gradle.develocity to v3.18.1 ([f40a5c6](https://github.com/tassiluca/gradle-scala-extras/commit/f40a5c6b9e65e96598e730b42a8fbd5130065fa8))
+* **deps:** update plugin gradlepluginpublish to v1.3.0 ([25f9479](https://github.com/tassiluca/gradle-scala-extras/commit/25f9479881041e6adb6b88bea7579e6e58b4db43))
+* **deps:** update plugin multijvmtesting to v1.2.6 ([46ae4fe](https://github.com/tassiluca/gradle-scala-extras/commit/46ae4fed161e840817ffc08c7ccb4bef82da53e2))
+* **deps:** update plugin multijvmtesting to v1.2.7 ([f9b2259](https://github.com/tassiluca/gradle-scala-extras/commit/f9b22596e51f9df87a50cee673e9265192f21eac))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.10 ([e3d6334](https://github.com/tassiluca/gradle-scala-extras/commit/e3d633404ec336253ee09be904b258a2e8db7ae7))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.12 ([b38e896](https://github.com/tassiluca/gradle-scala-extras/commit/b38e8969e2fd750dd8fe5da31cdf5562d927175b))
+* **deps:** update plugin publishoncentral to v5.1.7 ([930c231](https://github.com/tassiluca/gradle-scala-extras/commit/930c231e83211a38d8c1803b604abd052a053735))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.0.4 ([dc3371f](https://github.com/tassiluca/gradle-scala-extras/commit/dc3371f31e9e5cd52d12b82d315ee2e2d0fe4bb6))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.5 ([39e5de5](https://github.com/tassiluca/gradle-scala-extras/commit/39e5de5eea71c8d5766376dcd9135dd9830c0c4d))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.6 ([36ed993](https://github.com/tassiluca/gradle-scala-extras/commit/36ed993e31d21187891ee3b0d4cfe1f3201d98c6))
+
 ## [2.1.2](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.1...2.1.2) (2024-09-09)
 
 ### Dependency updates
