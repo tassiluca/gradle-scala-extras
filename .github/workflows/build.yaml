@@ -19,7 +19,7 @@ defaults:
 
 jobs:
   Dispatcher:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     if: >- # Prevents running the workflow twice on PR made by a branch of the same repository
       github.event_name != 'pull_request'
       || github.event.pull_request.head.repo.full_name != github.repository
@@ -97,7 +97,7 @@ jobs:
     concurrency:
       # Ensuring sequential execution of releases
       group: release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout the whole repository history
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
@@ -133,7 +133,7 @@ jobs:
         contains(join(needs.*.result, ','), 'failure')
         || !contains(join(needs.*.result, ','), 'cancelled')
       )
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Verify no failures occurred in needed jobs
         # if there are failures, false is executed and the job fails.
