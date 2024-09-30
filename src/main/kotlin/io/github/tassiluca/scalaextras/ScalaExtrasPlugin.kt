@@ -72,7 +72,7 @@ class ScalaExtrasPlugin : Plugin<Project> {
         }
     }
 
-    companion object {
+    private companion object {
         private const val SCALAFIX_TASK = "scalafix"
         private const val SCALAFMT_TASK = "scalafmtAll"
         private const val CHECK_TASK = "check"

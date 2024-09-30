@@ -28,7 +28,8 @@ open class Configuration(project: Project, defaultConfigurationFileName: String)
         .also { it.mkdirs() }
         .resolve(defaultConfigurationFileName)
 
-    companion object {
+    private companion object {
+        /** The folder where generated configurations are stored. */
         private const val GENERATED_CONFIGURATIONS_FOLDER = "scala-extras"
     }
 }
@@ -41,7 +42,7 @@ class ScalafmtConfiguration(project: Project) : Configuration(project, DEFAULT_S
         .let { """version\s*=\s*([\d.]+)""".toRegex().find(it)?.groupValues?.get(1) }
         ?: error("Missing required 'version' parameter in scalafmt configuration")
 
-    companion object {
+    private companion object {
         /** The default scalafmt configuration file name. */
         private const val DEFAULT_SCALAFMT_CONFIG_FILE = ".scalafmt.conf"
     }
@@ -56,7 +57,7 @@ class ScalafixConfiguration(project: Project) : Configuration(project, DEFAULT_S
         ?.let { setOf(SCALA3_REPORT_UNUSED) }
         .orEmpty()
 
-    companion object {
+    private companion object {
         /** The default scalafix configuration file name. */
         private const val DEFAULT_SCALAFIX_CONFIG_FILE = ".scalafix.conf"
     }
