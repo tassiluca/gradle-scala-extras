@@ -48,7 +48,7 @@ class ScalaExtrasPlugin : Plugin<Project> {
     private fun Project.populateConfigurationTask(configuration: Configuration): TaskProvider<Task> =
         tasks.register("populate${configuration.javaClass.simpleName}") {
             it.doLast {
-                logger.info("Picking up configuration ${configuration.resolvedConfiguration.get()}")
+                logger.info("Picking up configuration {}", configuration.resolvedConfiguration.get())
                 configuration.generatedConfigurationFile.createWithContent(configuration.resolvedConfiguration.get())
             }
         }
