@@ -66,9 +66,11 @@ class ScalaExtrasPlugin : Plugin<Project> {
         val options = extension.options
             .plus(extension.qa.scalafixConfiguration.defaultCompilationOptions())
             .run { if (extension.qa.allWarningsAsErrors.get()) plus(FAIL_ON_WARNINGS) else this }
-        logger.info("Additional compiler options: $options")
         tasks.withType(ScalaCompile::class.java) { compileTask ->
-            compileTask.scalaCompileOptions.additionalParameters = options.toList()
+            compileTask.scalaCompileOptions.additionalParameters.apply {
+                options.filter { it !in this }.forEach { add(it) }
+                logger.info("Additional compiler options: {}", this)
+            }
         }
     }
 
