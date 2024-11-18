@@ -1,3 +1,33 @@
+## [2.1.5](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.4...2.1.5) (2024-11-18)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.11 ([#87](https://github.com/tassiluca/gradle-scala-extras/issues/87)) ([d9113b7](https://github.com/tassiluca/gradle-scala-extras/commit/d9113b723e9ce65eb619b63d0867961ba4117ecc))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.112 ([d0992da](https://github.com/tassiluca/gradle-scala-extras/commit/d0992da0c4957a2d4b6ec95e1913c18f57fb0b54))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.113 ([cceaed0](https://github.com/tassiluca/gradle-scala-extras/commit/cceaed0d6216121a5e5cd7fdf9cd9284efa6be62))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.114 ([f5e457d](https://github.com/tassiluca/gradle-scala-extras/commit/f5e457d29b4725662d030e487431647caa0967e0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.115 ([#88](https://github.com/tassiluca/gradle-scala-extras/issues/88)) ([faed983](https://github.com/tassiluca/gradle-scala-extras/commit/faed983e91a85ea8fdd07b3091f1b2e3736ef514))
+* **deps:** update node.js to v22 ([d93fc74](https://github.com/tassiluca/gradle-scala-extras/commit/d93fc745192f7e030ac5162527f1bd6674c4cea8))
+* **deps:** update plugin com.gradle.develocity to v3.18.2 ([#90](https://github.com/tassiluca/gradle-scala-extras/issues/90)) ([2384b65](https://github.com/tassiluca/gradle-scala-extras/commit/2384b6546a8ef09803f345b3cae87264825da204))
+* **deps:** update plugin kotlin-qa to v0.69.0 ([432bbb2](https://github.com/tassiluca/gradle-scala-extras/commit/432bbb2cdf70164de894b32029c9e8e69e90782e))
+* **deps:** update plugin kotlin-qa to v0.70.1 ([#95](https://github.com/tassiluca/gradle-scala-extras/issues/95)) ([2503ae5](https://github.com/tassiluca/gradle-scala-extras/commit/2503ae5765bb4a1a542feecfa60bb52ba87a5911))
+* **deps:** update plugin multijvmtesting to v1.3.0 ([#86](https://github.com/tassiluca/gradle-scala-extras/issues/86)) ([3dad72b](https://github.com/tassiluca/gradle-scala-extras/commit/3dad72bb2ab499043fd54d3cb36c0307ad2f0496))
+* **deps:** update plugin multijvmtesting to v1.3.1 ([#96](https://github.com/tassiluca/gradle-scala-extras/issues/96)) ([a0cd412](https://github.com/tassiluca/gradle-scala-extras/commit/a0cd4125f8517d0201464bf76cae03a153e3f450))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.14 ([#98](https://github.com/tassiluca/gradle-scala-extras/issues/98)) ([47f1554](https://github.com/tassiluca/gradle-scala-extras/commit/47f15541437575e5aaa83a8abf62591517fb9eac))
+* **deps:** update plugin publishoncentral to v5.1.10 ([#97](https://github.com/tassiluca/gradle-scala-extras/issues/97)) ([c3531b7](https://github.com/tassiluca/gradle-scala-extras/commit/c3531b78b9af1f059a38ca0dbf164b4f3cd07739))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout digest to 11bd719 ([d4cfa1b](https://github.com/tassiluca/gradle-scala-extras/commit/d4cfa1b3aff431a07cd1fbe54bcab8043fb053d6))
+* **deps:** update actions/setup-node action to v4.1.0 ([a5181ac](https://github.com/tassiluca/gradle-scala-extras/commit/a5181acac30dea92cfc7aa96a8a3324c71efcf50))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.11 ([87c4426](https://github.com/tassiluca/gradle-scala-extras/commit/87c44268c2a849b7151ba59acc79a423e56345ef))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.12 ([07454fe](https://github.com/tassiluca/gradle-scala-extras/commit/07454fe0c4bf1fe0ed8396b5e6da0898f08b2161))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.13 ([#89](https://github.com/tassiluca/gradle-scala-extras/issues/89)) ([ac4abbe](https://github.com/tassiluca/gradle-scala-extras/commit/ac4abbedf8e3d210dbfd251e9f96ed75247d01a6))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.14 ([#91](https://github.com/tassiluca/gradle-scala-extras/issues/91)) ([5fe5e87](https://github.com/tassiluca/gradle-scala-extras/commit/5fe5e873020330d621b8ec174bfc22c0c76affe0))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.15 ([#92](https://github.com/tassiluca/gradle-scala-extras/issues/92)) ([233ae07](https://github.com/tassiluca/gradle-scala-extras/commit/233ae0766d356b8e81d99588cd0db4694ed116ee))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.16 ([#93](https://github.com/tassiluca/gradle-scala-extras/issues/93)) ([5aab980](https://github.com/tassiluca/gradle-scala-extras/commit/5aab98016fff8d406091f0633ef54edaf8149197))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.17 ([#94](https://github.com/tassiluca/gradle-scala-extras/issues/94)) ([5e696cf](https://github.com/tassiluca/gradle-scala-extras/commit/5e696cfc70ab12e2a334c43006300b867e3bb2e4))
+
 ## [2.1.4](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.3...2.1.4) (2024-10-10)
 
 ### Dependency updates
