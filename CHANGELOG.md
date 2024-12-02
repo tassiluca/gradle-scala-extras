@@ -1,3 +1,27 @@
+## [3.0.0](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.6...3.0.0) (2024-12-02)
+
+### ⚠ BREAKING CHANGES
+
+* drop `additionalCompilerOptions` extension option
+
+### Dependency updates
+
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.1.0 ([#109](https://github.com/tassiluca/gradle-scala-extras/issues/109)) ([063192c](https://github.com/tassiluca/gradle-scala-extras/commit/063192c7febcafce0f03ff284da254295d8d20db))
+* **deps:** update plugin kotlin-qa to v0.70.2 ([#105](https://github.com/tassiluca/gradle-scala-extras/issues/105)) ([6b47e4b](https://github.com/tassiluca/gradle-scala-extras/commit/6b47e4b30d17722f16c6f61f43fc1722f26d0836))
+* **deps:** update plugin multijvmtesting to v1.3.2 ([#104](https://github.com/tassiluca/gradle-scala-extras/issues/104)) ([26c982a](https://github.com/tassiluca/gradle-scala-extras/commit/26c982ad37c6be4c629726dd205233121babf4f9))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.15 ([#106](https://github.com/tassiluca/gradle-scala-extras/issues/106)) ([303df71](https://github.com/tassiluca/gradle-scala-extras/commit/303df7144cb8a05c963bd22732931a09176e257f))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v0.9.0 ([#110](https://github.com/tassiluca/gradle-scala-extras/issues/110)) ([c2fb611](https://github.com/tassiluca/gradle-scala-extras/commit/c2fb61145ae3c141b180a84291007e5b4638e0b4))
+* **deps:** update plugin publishoncentral to v5.1.11 ([#107](https://github.com/tassiluca/gradle-scala-extras/issues/107)) ([0122f9d](https://github.com/tassiluca/gradle-scala-extras/commit/0122f9d61021d980578d48ebad13f39f2dad707a))
+
+### Build and continuous integration
+
+* add mergify ([0b645f9](https://github.com/tassiluca/gradle-scala-extras/commit/0b645f9e393e6b8e80c90d2368ffeac49c6e36b6))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.5.23 ([#103](https://github.com/tassiluca/gradle-scala-extras/issues/103)) ([887df72](https://github.com/tassiluca/gradle-scala-extras/commit/887df72cdc9fcad42a34a903c3debb91775a1a69))
+
+### Refactoring
+
+* drop `additionalCompilerOptions` extension option ([f6da03b](https://github.com/tassiluca/gradle-scala-extras/commit/f6da03b0a0cd7b88dff9dbf1edf87ee074352518))
+
 ## [2.1.6](https://github.com/tassiluca/gradle-scala-extras/compare/2.1.5...2.1.6) (2024-11-20)
 
 ### Dependency updates
