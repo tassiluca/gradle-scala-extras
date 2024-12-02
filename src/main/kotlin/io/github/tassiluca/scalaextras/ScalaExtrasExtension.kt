@@ -10,12 +10,6 @@ import org.gradle.api.provider.Property
 open class ScalaExtrasExtension(private val project: Project) {
 
     internal val qa = QAExtension()
-    internal var options: Set<String> = emptySet()
-
-    /** The set of additional compiler options. */
-    fun additionalCompilerOptions(options: Set<String>) {
-        this.options = options
-    }
 
     /** DSL entry point for quality assurance configurations. */
     fun qa(apply: QAExtension.() -> Unit) = qa.apply()

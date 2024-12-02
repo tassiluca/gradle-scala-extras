@@ -1,0 +1,21 @@
+tests:
+  - description: "Applying scala coverage plugin"
+    configuration:
+      tasks:
+        - clean
+        - check
+        - reportScoverage
+      options:
+        - --stacktrace
+        - --info
+    expectation:
+      result: success
+      outcomes:
+        success:
+          - checkScalafmtAll
+          - checkScalafmt
+          - checkTestScalafmt
+          - checkScalafix
+          - checkScalafixMain
+          - checkScalafixTest
+          - reportScoverage
