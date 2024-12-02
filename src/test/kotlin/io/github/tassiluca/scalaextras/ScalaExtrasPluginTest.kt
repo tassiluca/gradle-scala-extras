@@ -31,6 +31,10 @@ class ScalaExtrasPluginTest : FreeSpec({
         "with custom configuration" {
             Testkit.projectTest("custom")
         }
+
+        "with scala coverage" {
+            Testkit.projectTest("scoverage")
+        }
     }
 }) {
     companion object {
