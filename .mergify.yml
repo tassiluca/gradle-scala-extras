@@ -1,0 +1,49 @@
+pull_request_rules:
+  - name: Ping PR author when conflicting
+    description: Warn the pull request author when their PR are conflicting
+    conditions:
+      - conflict
+      - '-closed'
+    actions:
+      comment:
+        message: >
+          👋 @{{author}} your PR is conflicting and needs to be updated to be merged 😉
+  - name: Ping PR author when title does not follow conventional commits
+    description: Warn the pull request author when their PR title does not follow conventional commits
+    conditions:
+      - '-title ~= ^(fix|feat|docs|style|refactor|perf|test|build|ci|chore|revert)(?:(.+))?:'
+    actions:
+      comment:
+        message: >
+          👋 @{{author}} your PR title does not follow conventional commits guidelines.
+          ⚠️ If squashed, the new commit won't be complaint with those conventions (please, refer to https://www.conventionalcommits.org/).
+  - name: Automatic rebase
+    conditions:
+      - check-success~=.*Success
+      - '#review-threads-unresolved=0'
+      - base=master
+      - label=auto-rebase
+      - '-draft'
+      - '-conflict'
+    actions:
+      merge:
+        method: rebase
+        merge_bot_account: tassiluca
+  - name: Automatic squash
+    conditions:
+      - check-success~=.*Success
+      - '#review-threads-unresolved=0'
+      - base=master
+      - label=auto-squash
+      - '-draft'
+      - '-conflict'
+    actions:
+      merge:
+        method: squash
+        merge_bot_account: tassiluca
+  - name: Delete head branch after merge but not if other PRs depend on it
+    conditions:
+      - merged
+    actions:
+      delete_head_branch:
+        force: false
