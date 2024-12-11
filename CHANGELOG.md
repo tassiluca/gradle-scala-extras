@@ -1,3 +1,9 @@
+## [3.1.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.1.0...3.1.1) (2024-12-11)
+
+### Bug Fixes
+
+* configure appropriately classpath based on subprojectd ([67ef109](https://github.com/tassiluca/gradle-scala-extras/commit/67ef1095883a78e09923c018f9738ca5fe1fc1e8))
+
 ## [3.1.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.0.0...3.1.0) (2024-12-11)
 
 ### Features
