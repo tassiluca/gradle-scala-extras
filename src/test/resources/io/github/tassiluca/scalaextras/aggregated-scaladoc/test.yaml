@@ -1,0 +1,20 @@
+tests:
+  - description: "Properly formatted sources"
+    configuration:
+      tasks:
+        - clean
+        - check
+        - aggregateScaladoc
+      options:
+        - --stacktrace
+        - --info
+    expectation:
+      result: success
+      outcomes:
+        success:
+          - check
+          - aggregateScaladoc
+      files:
+        existing:
+          - name: "build/docs/aggregated-scaladoc/io/github/tassiluca/Launcher$.html"
+          - name: "build/docs/aggregated-scaladoc/io/github/tassiluca/Square.html"

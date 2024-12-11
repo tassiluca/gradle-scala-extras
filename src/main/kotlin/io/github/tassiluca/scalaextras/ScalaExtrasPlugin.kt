@@ -8,8 +8,11 @@ import io.github.tassiluca.scalaextras.ScalaCompilerOptions.FAIL_ON_WARNINGS
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
+import org.gradle.api.plugins.JavaBasePlugin
+import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.scala.ScalaCompile
+import org.gradle.api.tasks.scala.ScalaDoc
 import cz.augi.gradle.scalafmt.PluginExtension as ScalafmtExtension
 
 /** The scala extras plugin entry point. */
@@ -25,6 +28,7 @@ class ScalaExtrasPlugin : Plugin<Project> {
         project.configureScalafix(extension.qa.scalafixConfiguration)
         project.configureFormatTask()
         project.configureCompilerOptions(extension)
+        project.configureAggregateScaladocTask()
     }
 
     private fun Project.configureScalaFmt(configuration: ScalafmtConfiguration) {
@@ -70,6 +74,23 @@ class ScalaExtrasPlugin : Plugin<Project> {
                 options.filter { it !in this }.forEach { add(it) }
                 logger.info("Additional compiler options: {}", this)
             }
+        }
+    }
+
+    private fun Project.configureAggregateScaladocTask() = tasks.apply {
+        register("aggregateScaladoc", ScalaDoc::class.java) {
+            it.group = JavaBasePlugin.DOCUMENTATION_GROUP
+            it.description = "Aggregate scaladocs from all sub-projects."
+            it.destinationDir = layout.buildDirectory.dir("docs/aggregated-scaladoc").get().asFile
+            it.title = "${project.name} $version API"
+            subprojects.map { proj -> proj.tasks.getByName("compileScala").outputs }.run {
+                it.compilationOutputs.from(this)
+            }
+            subprojects.flatMap { proj ->
+                proj.extensions.getByType(SourceSetContainer::class.java)
+                    .filter { sourceSet -> sourceSet.name == "main" }
+                    .map { sourceSet -> sourceSet.allSource }
+            }.run { it.source(this) }
         }
     }
 

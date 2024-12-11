@@ -35,6 +35,10 @@ class ScalaExtrasPluginTest : FreeSpec({
         "with scala coverage" {
             Testkit.projectTest("scoverage")
         }
+
+        "with aggregate scaladoc" {
+            Testkit.projectTest("aggregated-scaladoc")
+        }
     }
 }) {
     companion object {
