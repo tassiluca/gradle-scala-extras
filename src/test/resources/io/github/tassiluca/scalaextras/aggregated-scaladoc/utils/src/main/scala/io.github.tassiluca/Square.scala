@@ -13,3 +13,19 @@ case class Square(side: Double):
     * @return the perimeter of the square
     */
   def perimeter: Double = 4 * side
+
+object Square:
+  import com.google.gson.{Gson, GsonBuilder}
+  private val gson: Gson = new GsonBuilder().create()
+
+  /** Serializes a Square object to a JSON string
+    * @param square the Square object to serialize
+    * @return JSON representation of the Square
+    */
+  def toJson(square: Square): String = gson.toJson(square)
+
+  /** Deserializes a JSON string to a Square object
+    * @param json the JSON string representing a Square
+    * @return the Square object created from the JSON string
+    */
+  def fromJson(json: String): Square = gson.fromJson(json, classOf[Square])

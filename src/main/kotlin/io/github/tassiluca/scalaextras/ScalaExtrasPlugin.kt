@@ -89,6 +89,7 @@ class ScalaExtrasPlugin : Plugin<Project> {
             subprojects.flatMap { proj ->
                 proj.extensions.getByType(SourceSetContainer::class.java)
                     .filter { sourceSet -> sourceSet.name == "main" }
+                    .onEach { sourceSet -> it.classpath += sourceSet.compileClasspath }
                     .map { sourceSet -> sourceSet.allSource }
             }.run { it.source(this) }
         }

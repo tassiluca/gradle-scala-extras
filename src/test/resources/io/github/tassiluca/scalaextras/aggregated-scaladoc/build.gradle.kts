@@ -1,10 +1,12 @@
 plugins {
     scala
+    `java-library`
     id("io.github.tassiluca.gradle-scala-extras")
 }
 
 allprojects {
     apply(plugin = "scala")
+    apply(plugin = "java-library")
     apply(plugin = "io.github.tassiluca.gradle-scala-extras")
 
     repositories {
