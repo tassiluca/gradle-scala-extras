@@ -1,3 +1,16 @@
+## [3.1.3](https://github.com/tassiluca/gradle-scala-extras/compare/3.1.2...3.1.3) (2024-12-25)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.117 ([#131](https://github.com/tassiluca/gradle-scala-extras/issues/131)) ([4865b42](https://github.com/tassiluca/gradle-scala-extras/commit/4865b42931ed2295aee3f0688f8614f27917672b))
+* **deps:** update plugin multijvmtesting to v3.0.2 ([#129](https://github.com/tassiluca/gradle-scala-extras/issues/129)) ([4fee7b3](https://github.com/tassiluca/gradle-scala-extras/commit/4fee7b3646e330adff6f0bdf20e0659092fc30ac))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.18 ([#130](https://github.com/tassiluca/gradle-scala-extras/issues/130)) ([7fb2cbc](https://github.com/tassiluca/gradle-scala-extras/commit/7fb2cbca9f52ffcfab6bd7c07cc017b9ae65587e))
+
+### Bug Fixes
+
+* **scalafix:** use `NoValInForComprehension`, `noAsInstanceOf` and set `coalesceToWildcardImportThreshold=3` ([75294a4](https://github.com/tassiluca/gradle-scala-extras/commit/75294a4259b0dbe2e020349dbe0b7158628535f8))
+* **scalafmt:** do not fold new lines and improve rewrite rules ([38646e7](https://github.com/tassiluca/gradle-scala-extras/commit/38646e71a21118759479de07ee3d834d727b6830))
+
 ## [3.1.2](https://github.com/tassiluca/gradle-scala-extras/compare/3.1.1...3.1.2) (2024-12-20)
 
 ### Dependency updates
