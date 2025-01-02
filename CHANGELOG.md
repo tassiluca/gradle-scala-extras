@@ -1,3 +1,15 @@
+## [3.1.4](https://github.com/tassiluca/gradle-scala-extras/compare/3.1.3...3.1.4) (2025-01-02)
+
+### Dependency updates
+
+* **deps:** update plugin multijvmtesting to v3.0.3 ([#132](https://github.com/tassiluca/gradle-scala-extras/issues/132)) ([b59e00b](https://github.com/tassiluca/gradle-scala-extras/commit/b59e00bfdbd382c63c5f04a52983957a10b15121))
+* **deps:** update plugin multijvmtesting to v3.1.1 ([#133](https://github.com/tassiluca/gradle-scala-extras/issues/133)) ([e69c7ef](https://github.com/tassiluca/gradle-scala-extras/commit/e69c7ef207c8a25b889e05f65ce8692716d209e6))
+* **deps:** update plugin multijvmtesting to v3.1.2 ([#134](https://github.com/tassiluca/gradle-scala-extras/issues/134)) ([deefea8](https://github.com/tassiluca/gradle-scala-extras/commit/deefea87c38d49f3dd9be84387e2e52a5a23d465))
+
+### Bug Fixes
+
+* set default import order as keep in scalafix since conflicted with scalafmt configuration ([a280948](https://github.com/tassiluca/gradle-scala-extras/commit/a280948eb184d17a9051769f960ce08a55eabc0e))
+
 ## [3.1.3](https://github.com/tassiluca/gradle-scala-extras/compare/3.1.2...3.1.3) (2024-12-25)
 
 ### Dependency updates
