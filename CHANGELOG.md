@@ -1,3 +1,12 @@
+## [3.3.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.3.0...3.3.1) (2025-02-26)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.13 ([#175](https://github.com/tassiluca/gradle-scala-extras/issues/175)) ([50b332a](https://github.com/tassiluca/gradle-scala-extras/commit/50b332a57dc868610cee5d3e26f6f180300d3fb6))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.125 ([#172](https://github.com/tassiluca/gradle-scala-extras/issues/172)) ([c7e2adf](https://github.com/tassiluca/gradle-scala-extras/commit/c7e2adf281908d97a90c00a702c8314d3d83baac))
+* **deps:** update plugin multijvmtesting to v3.2.3 ([#173](https://github.com/tassiluca/gradle-scala-extras/issues/173)) ([f51a21a](https://github.com/tassiluca/gradle-scala-extras/commit/f51a21a7bcd33a0ec9e76c5a7337c67e02c2b3aa))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.21 ([#174](https://github.com/tassiluca/gradle-scala-extras/issues/174)) ([0dff0fc](https://github.com/tassiluca/gradle-scala-extras/commit/0dff0fc4e89a9114f435502eb26a9926d2eeae6a))
+
 ## [3.3.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.2.0...3.3.0) (2025-02-22)
 
 ### Dependency updates
