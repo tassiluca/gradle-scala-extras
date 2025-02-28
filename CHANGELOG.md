@@ -1,3 +1,13 @@
+## [3.4.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.3.1...3.4.0) (2025-02-28)
+
+### Dependency updates
+
+* **api-deps:** update dependency io.github.cosmicsilence:gradle-scalafix to v0.2.4 ([#141](https://github.com/tassiluca/gradle-scala-extras/issues/141)) ([29726e6](https://github.com/tassiluca/gradle-scala-extras/commit/29726e6e4065e032697c1b1df7a4706fadb4e2fa))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.12 ([#176](https://github.com/tassiluca/gradle-scala-extras/issues/176)) ([413eb04](https://github.com/tassiluca/gradle-scala-extras/commit/413eb04426b4c745ddc0bb84e6795226dbc33d1d))
+
 ## [3.3.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.3.0...3.3.1) (2025-02-26)
 
 ### Dependency updates
