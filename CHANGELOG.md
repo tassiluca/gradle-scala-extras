@@ -1,3 +1,9 @@
+## [3.5.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.4.0...3.5.0) (2025-03-01)
+
+### Dependency updates
+
+* **api-deps:** update dependency scalafmt to v3.9.2 ([#177](https://github.com/tassiluca/gradle-scala-extras/issues/177)) ([1e8be48](https://github.com/tassiluca/gradle-scala-extras/commit/1e8be488a6706ad27bda63e66490add069708f9d))
+
 ## [3.4.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.3.1...3.4.0) (2025-02-28)
 
 ### Dependency updates
