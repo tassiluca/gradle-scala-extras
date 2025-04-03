@@ -51,7 +51,7 @@ jobs:
             ./gradlew
             uploadAllToMavenCentralNexus
             close
-            drop
+            dropStagingRepositoryOnMavenCentral
             --parallel
           should-run-codecov: false
           should-deploy: >-
