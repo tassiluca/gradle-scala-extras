@@ -49,11 +49,9 @@ jobs:
             ./gradlew check --parallel
           deploy-command: >-
             ./gradlew
-            uploadKotlinOSSRHToMavenCentralNexus
-            uploadPluginMavenToMavenCentralNexus
-            uploadPluginMarkerMavenToMavenCentralNexus
+            uploadAllToMavenCentralNexus
             close
-            drop
+            dropStagingRepositoryOnMavenCentral
             --parallel
           should-run-codecov: false
           should-deploy: >-
