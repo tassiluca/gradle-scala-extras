@@ -1,3 +1,4 @@
+import Utils.inCI
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
@@ -30,8 +31,12 @@ repositories {
 }
 
 multiJvm {
-    /* By default, compile with Java 8 and test with the supported LTS versions and the latest. */
-    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
+    /* Compile with Java 11. In CI test with all LTS versions from 11 onwards, otherwise with the latest java. */
+    jvmVersionForCompilation.set(11)
+    maximumSupportedJvmVersion.set(latestJava)
+    if (!inCI) {
+        testByDefaultWith(latestJava)
+    }
 }
 
 dependencies {
