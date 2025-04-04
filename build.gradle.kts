@@ -33,9 +33,9 @@ repositories {
 multiJvm {
     /* Compile with Java 11. In CI test with all LTS versions from 11 onwards, otherwise with the latest java. */
     jvmVersionForCompilation.set(11)
-    maximumSupportedJvmVersion.set(latestJava)
+    maximumSupportedJvmVersion.set(latestJavaSupportedByGradle)
     if (!inCI) {
-        testByDefaultWith(latestJava)
+        testByDefaultWith(latestJavaSupportedByGradle)
     }
 }
 
