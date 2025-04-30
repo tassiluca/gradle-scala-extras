@@ -1,3 +1,11 @@
+## [3.8.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.7.1...3.8.0) (2025-04-30)
+
+### Dependency updates
+
+* **api-deps:** update dependency scalafmt to v3.9.5 ([#204](https://github.com/tassiluca/gradle-scala-extras/issues/204)) ([c727523](https://github.com/tassiluca/gradle-scala-extras/commit/c727523fd77ca68fe79ae703b54d27db5b3adee1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.126 ([#203](https://github.com/tassiluca/gradle-scala-extras/issues/203)) ([d58d932](https://github.com/tassiluca/gradle-scala-extras/commit/d58d9323f0c8e77cc6e8ef8d92848a519d8b0ee4))
+* **deps:** update plugin kotlin-qa to v0.86.1 ([#201](https://github.com/tassiluca/gradle-scala-extras/issues/201)) ([d760296](https://github.com/tassiluca/gradle-scala-extras/commit/d760296356230c7d37f49f864f01b10a23c3c01f))
+
 ## [3.7.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.7.0...3.7.1) (2025-04-26)
 
 ### Dependency updates
