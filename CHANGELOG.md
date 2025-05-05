@@ -1,3 +1,15 @@
+## [3.9.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.8.0...3.9.0) (2025-05-05)
+
+### Dependency updates
+
+* **api-deps:** update dependency scalafmt to v3.9.6 ([#208](https://github.com/tassiluca/gradle-scala-extras/issues/208)) ([bb35f1c](https://github.com/tassiluca/gradle-scala-extras/commit/bb35f1ceab9addbbdc1c9f890a59eb8000715674))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.127 ([#205](https://github.com/tassiluca/gradle-scala-extras/issues/205)) ([21704f0](https://github.com/tassiluca/gradle-scala-extras/commit/21704f08e2aed9d1a158205e591ec9810a7d2cf7))
+* **deps:** update plugin publishoncentral to v8.0.7 ([#206](https://github.com/tassiluca/gradle-scala-extras/issues/206)) ([ad017d5](https://github.com/tassiluca/gradle-scala-extras/commit/ad017d54d4b5c6b2397dfd637799f42371a73699))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.18 ([#207](https://github.com/tassiluca/gradle-scala-extras/issues/207)) ([928bf54](https://github.com/tassiluca/gradle-scala-extras/commit/928bf542de833b3e94bcb24309cce2e0f0f9d03e))
+
 ## [3.8.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.7.1...3.8.0) (2025-04-30)
 
 ### Dependency updates
