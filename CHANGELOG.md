@@ -1,3 +1,14 @@
+## [3.10.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.9.0...3.10.0) (2025-05-15)
+
+### Dependency updates
+
+* **api-deps:** update dependency cz.augi:gradle-scalafmt to v1.21.4 ([#214](https://github.com/tassiluca/gradle-scala-extras/issues/214)) ([b9c7609](https://github.com/tassiluca/gradle-scala-extras/commit/b9c7609aa07a9cee56776fe713d4924e5f7db73b))
+* **deps:** update dependency org.jetbrains.kotlin.jvm to v2.1.21 ([#209](https://github.com/tassiluca/gradle-scala-extras/issues/209)) ([0e59b67](https://github.com/tassiluca/gradle-scala-extras/commit/0e59b6741b9882318a0f0f72f151610b554f81ab))
+* **deps:** update plugin gitsemanticversioning to v5.1.3 ([#212](https://github.com/tassiluca/gradle-scala-extras/issues/212)) ([24a6574](https://github.com/tassiluca/gradle-scala-extras/commit/24a657446d849af722c133f7423216c7c59c2398))
+* **deps:** update plugin kotlin-qa to v0.86.2 ([#210](https://github.com/tassiluca/gradle-scala-extras/issues/210)) ([9688ed3](https://github.com/tassiluca/gradle-scala-extras/commit/9688ed33cce97810e22e2cbe7c3edda22f583e2b))
+* **deps:** update plugin multijvmtesting to v3.4.2 ([#213](https://github.com/tassiluca/gradle-scala-extras/issues/213)) ([648aa49](https://github.com/tassiluca/gradle-scala-extras/commit/648aa499311ad078ed6e5dd63ded5fb029ab6448))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.24 ([#211](https://github.com/tassiluca/gradle-scala-extras/issues/211)) ([7f05494](https://github.com/tassiluca/gradle-scala-extras/commit/7f054940a834706a32d8d6a8f94c976f9a4625c7))
+
 ## [3.9.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.8.0...3.9.0) (2025-05-05)
 
 ### Dependency updates
