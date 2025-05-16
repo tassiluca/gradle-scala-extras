@@ -1,3 +1,14 @@
+## [3.11.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.10.0...3.11.0) (2025-05-16)
+
+### Dependency updates
+
+* **api-deps:** update dependency cz.augi:gradle-scalafmt to v1.21.5 ([#217](https://github.com/tassiluca/gradle-scala-extras/issues/217)) ([22ffc54](https://github.com/tassiluca/gradle-scala-extras/commit/22ffc54dc15c14b229d07afa128c50fcbff6444f))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.128 ([#215](https://github.com/tassiluca/gradle-scala-extras/issues/215)) ([bbdacc4](https://github.com/tassiluca/gradle-scala-extras/commit/bbdacc45ccec756b53b9e3498b0fdd4882766b92))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.19 ([#216](https://github.com/tassiluca/gradle-scala-extras/issues/216)) ([3d7a659](https://github.com/tassiluca/gradle-scala-extras/commit/3d7a6591f9282469f75d6e939639b26682e2b92e))
+
 ## [3.10.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.9.0...3.10.0) (2025-05-15)
 
 ### Dependency updates
