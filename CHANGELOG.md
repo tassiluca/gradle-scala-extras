@@ -1,3 +1,15 @@
+## [3.11.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.11.0...3.11.1) (2025-05-23)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.14.1 ([#221](https://github.com/tassiluca/gradle-scala-extras/issues/221)) ([9b2484f](https://github.com/tassiluca/gradle-scala-extras/commit/9b2484f69f9bbcbaf315e1ef516a4b990be4be48))
+* **deps:** update plugin kotlin-qa to v0.87.0 ([#220](https://github.com/tassiluca/gradle-scala-extras/issues/220)) ([98e282a](https://github.com/tassiluca/gradle-scala-extras/commit/98e282ab907543ce72e8552d2aa828f5a932f70e))
+* **deps:** update plugin org.gradle.toolchains.foojay-resolver-convention to v1 ([#219](https://github.com/tassiluca/gradle-scala-extras/issues/219)) ([382f082](https://github.com/tassiluca/gradle-scala-extras/commit/382f08237273d40b6be56cb69005b23352756e25))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v3.7.20 ([#218](https://github.com/tassiluca/gradle-scala-extras/issues/218)) ([1324a9c](https://github.com/tassiluca/gradle-scala-extras/commit/1324a9c18ba601ed2c24ac562516985c5da4cc5b))
+
 ## [3.11.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.10.0...3.11.0) (2025-05-16)
 
 ### Dependency updates
