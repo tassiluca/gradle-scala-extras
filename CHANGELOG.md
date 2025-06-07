@@ -1,3 +1,10 @@
+## [3.12.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.12.0...3.12.1) (2025-06-07)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.14.2 ([#235](https://github.com/tassiluca/gradle-scala-extras/issues/235)) ([ddce2b2](https://github.com/tassiluca/gradle-scala-extras/commit/ddce2b201c6642c22bed2b5b9c8c07f7bc04a9e4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.133 ([#234](https://github.com/tassiluca/gradle-scala-extras/issues/234)) ([3210c36](https://github.com/tassiluca/gradle-scala-extras/commit/3210c36d61125b2041edb040a49d00119d4db16d))
+
 ## [3.12.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.11.1...3.12.0) (2025-05-31)
 
 ### Dependency updates
