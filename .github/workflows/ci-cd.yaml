@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-22.04, macos-14, windows-2022]
+        os: [ubuntu-24.04, macos-15, windows-2025]
     concurrency:
       # If multiple commits are pushed to the same branch or added to the same PR,
       # only the workflow for the latest commit will be run
