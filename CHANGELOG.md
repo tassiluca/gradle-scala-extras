@@ -1,3 +1,19 @@
+## [3.13.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.0...3.13.1) (2025-07-15)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.134 ([#252](https://github.com/tassiluca/gradle-scala-extras/issues/252)) ([d88b46d](https://github.com/tassiluca/gradle-scala-extras/commit/d88b46d44e332eb6de45413472cd9c57f453ecd4))
+* **deps:** update plugin gitsemanticversioning to v5.1.5 ([#250](https://github.com/tassiluca/gradle-scala-extras/issues/250)) ([eb28f92](https://github.com/tassiluca/gradle-scala-extras/commit/eb28f92044c787ecdffc3ee0590fa769c74d7b53))
+* **deps:** update plugin kotlin-qa to v0.90.1 ([#251](https://github.com/tassiluca/gradle-scala-extras/issues/251)) ([e94edf4](https://github.com/tassiluca/gradle-scala-extras/commit/e94edf44dcff21895e5cf713ccd2e76521a893ee))
+
+### Bug Fixes
+
+* switch to maven central portal ([aecee16](https://github.com/tassiluca/gradle-scala-extras/commit/aecee162ff94e304c71f10d91c4a9dda18c25b32))
+
+### Build and continuous integration
+
+* use most-up-to-date ci runners ([9025b5f](https://github.com/tassiluca/gradle-scala-extras/commit/9025b5f96ace340306938c048b6dd88686170464))
+
 ## [3.13.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.12.1...3.13.0) (2025-06-29)
 
 ### Dependency updates
