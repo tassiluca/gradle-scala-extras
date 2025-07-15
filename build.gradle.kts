@@ -14,7 +14,7 @@ plugins {
 
 group = "io.github.tassiluca"
 description = "A plugin to enhance the Scala gradle core plugin with quality assurance and common useful tools"
-inner class ProjectInfo {
+class ProjectInfo {
     val repoOwner = "tassiluca"
     val longName = "Gradle Scala Extras Plugin"
     val website = "https://github.com/$repoOwner/$name"
@@ -76,20 +76,6 @@ signing {
     }
 }
 
-gradlePlugin {
-    plugins {
-        website = projectInfo.website
-        vcsUrl = projectInfo.vcsUrl
-        create("") {
-            id = "$group.${project.name}"
-            displayName = projectInfo.longName
-            description = project.description
-            implementationClass = projectInfo.pluginImplementationClass
-            tags = projectInfo.tags
-        }
-    }
-}
-
 publishOnCentral {
     projectLongName = projectInfo.longName
     projectDescription = description
@@ -115,6 +101,20 @@ publishing {
                     }
                 }
             }
+        }
+    }
+}
+
+gradlePlugin {
+    plugins {
+        website = projectInfo.website
+        vcsUrl = projectInfo.vcsUrl
+        create("") {
+            id = "$group.${project.name}"
+            displayName = projectInfo.longName
+            description = project.description
+            implementationClass = projectInfo.pluginImplementationClass
+            tags = projectInfo.tags
         }
     }
 }
