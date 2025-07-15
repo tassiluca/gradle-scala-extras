@@ -49,10 +49,10 @@ jobs:
             ./gradlew check --parallel
           deploy-command: >-
             ./gradlew
-            uploadAllToMavenCentralNexus
-            close
-            dropStagingRepositoryOnMavenCentral
-            --parallel
+            publishAllPublicationsToProjectLocalRepository
+            zipMavenCentralPortalPublication
+            releaseMavenCentralPortalPublication
+            --dry-run
           should-run-codecov: false
           should-deploy: >-
             ${{

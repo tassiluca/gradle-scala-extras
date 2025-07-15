@@ -1,7 +1,7 @@
 const publishCommands = `
-./gradlew publishPlugins -Pgradle.publish.key=$GRADLE_PUBLISH_KEY -Pgradle.publish.secret=$GRADLE_PUBLISH_SECRET || exit 1
-./gradlew uploadKotlinOSSRHToMavenCentralNexus uploadPluginMavenToMavenCentralNexus uploadPluginMarkerMavenToMavenCentralNexus releaseStagingRepositoryOnMavenCentral || exit 2
-./gradlew publishKotlinOSSRHPublicationToGitHubRepository publishPluginMavenPublicationToGitHubRepository || true
+./gradlew publishAllPublicationsToProjectLocalRepository zipMavenCentralPortalPublication releaseMavenCentralPortalPublication || exit 1
+./gradlew publishPlugins -Pgradle.publish.key=$GRADLE_PUBLISH_KEY -Pgradle.publish.secret=$GRADLE_PUBLISH_SECRET || exit 2
+./gradlew publishOSSRHPublicationToGithubRepository publishPluginMavenPublicationToGithubRepository publishPluginMarkerMavenPublicationToGithubRepository || true
 `
 const releaseBranches = ["master"]
 const config = require('semantic-release-preconfigured-conventional-commits')
