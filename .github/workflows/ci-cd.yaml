@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 jobs:
-  Build-Test-Check-Dry-Deploy:
+  Build-Test-Check-Dry-Release:
     strategy:
       fail-fast: false
       matrix:
@@ -65,9 +65,9 @@ jobs:
           signing-key: ${{ secrets.SIGNING_KEY }}
           signing-password: ${{ secrets.SIGNING_PASSWORD }}
 
-  Deploy:
+  Release:
     needs:
-      - Build-Test-Check-Dry-Deploy
+      - Build-Test-Check-Dry-Release
     permissions:
       contents: write
       packages: write
@@ -106,8 +106,8 @@ jobs:
 
   Success:
     needs:
-      - Build-Test-Check-Dry-Deploy
-      - Deploy
+      - Build-Test-Check-Dry-Release
+      - Release
     if: >- # Requires that at least one needed job has failed, or all needed jobs have not been canceled
       always() && (
         contains(join(needs.*.result, ','), 'failure')

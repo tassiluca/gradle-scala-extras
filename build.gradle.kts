@@ -13,10 +13,10 @@ plugins {
 }
 
 group = "io.github.tassiluca"
+description = "A plugin to enhance the Scala gradle core plugin with quality assurance and common useful tools"
 inner class ProjectInfo {
     val repoOwner = "tassiluca"
     val longName = "Gradle Scala Extras Plugin"
-    val description = "A plugin to enhance the Scala gradle core plugin with quality assurance tools"
     val website = "https://github.com/$repoOwner/$name"
     val vcsUrl = "$website.git"
     val scm = "scm:git:$website.git"
@@ -81,9 +81,9 @@ gradlePlugin {
         website = projectInfo.website
         vcsUrl = projectInfo.vcsUrl
         create("") {
-            id = "${project.group}.${project.name}"
+            id = "$group.${project.name}"
             displayName = projectInfo.longName
-            description = projectInfo.description
+            description = project.description
             implementationClass = projectInfo.pluginImplementationClass
             tags = projectInfo.tags
         }
@@ -92,25 +92,26 @@ gradlePlugin {
 
 publishOnCentral {
     projectLongName = projectInfo.longName
-    projectDescription = projectInfo.description
+    projectDescription = description
     projectUrl = projectInfo.website
     scmConnection = projectInfo.scm
     licenseName = "Apache License, Version 2.0"
     licenseUrl = "https://www.apache.org/licenses/LICENSE-2.0"
     repoOwner = projectInfo.repoOwner
-    repository("https://maven.pkg.github.com/${projectInfo.repoOwner}/$name", "GitHub") {
+    repository("https://maven.pkg.github.com/${projectInfo.repoOwner}/${rootProject.name}", "github") {
         user = repoOwner
         password = System.getenv("GITHUB_TOKEN")
     }
-    publishing {
-        publications {
-            withType<MavenPublication> {
-                pom {
-                    developers {
-                        developer {
-                            name = "Luca Tassinari"
-                            email = "luca.tassinari.2000@gmail.com"
-                        }
+}
+
+publishing {
+    publications {
+        withType<MavenPublication> {
+            pom {
+                developers {
+                    developer {
+                        name = "Luca Tassinari"
+                        email = "luca.tassinari.2000@gmail.com"
                     }
                 }
             }
