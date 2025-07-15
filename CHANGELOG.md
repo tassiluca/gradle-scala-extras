@@ -1,3 +1,9 @@
+## [3.13.3](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.2...3.13.3) (2025-07-15)
+
+### Bug Fixes
+
+* move gradle plugin block in the end ([c633c5d](https://github.com/tassiluca/gradle-scala-extras/commit/c633c5dc7d2123aa933a5a2d70593a508a11bbff))
+
 ## [3.13.2](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.1...3.13.2) (2025-07-15)
 
 ### Bug Fixes
