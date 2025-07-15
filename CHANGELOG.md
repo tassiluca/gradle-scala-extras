@@ -1,3 +1,9 @@
+## [3.13.2](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.1...3.13.2) (2025-07-15)
+
+### Bug Fixes
+
+* gradle publish configuration ([d01a58a](https://github.com/tassiluca/gradle-scala-extras/commit/d01a58a2f7fe69a0c89e3acd59689bf765f42788))
+
 ## [3.13.1](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.0...3.13.1) (2025-07-15)
 
 ### Dependency updates
