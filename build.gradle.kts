@@ -42,7 +42,6 @@ multiJvm {
 dependencies {
     api(gradleApi())
     api(gradleKotlinDsl())
-    implementation(kotlin("stdlib-jdk8"))
     implementation(libs.gradle.scalafmt)
     implementation(libs.gradle.scalafix)
     testImplementation(gradleTestKit())
