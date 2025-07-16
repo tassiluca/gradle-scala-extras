@@ -1,3 +1,9 @@
+## [3.13.5](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.4...3.13.5) (2025-07-16)
+
+### Bug Fixes
+
+* **build:** remove stdlib-jdk8 dependency ([8418c35](https://github.com/tassiluca/gradle-scala-extras/commit/8418c354f514b138a9fb3cbd2d7edf5c6c72db8b))
+
 ## [3.13.4](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.3...3.13.4) (2025-07-16)
 
 ### Dependency updates
