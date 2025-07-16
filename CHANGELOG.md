@@ -1,3 +1,9 @@
+## [3.13.6](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.5...3.13.6) (2025-07-16)
+
+### Bug Fixes
+
+* **build:** use set for properties in place of assignment ([598ff9e](https://github.com/tassiluca/gradle-scala-extras/commit/598ff9e10000449ccc268be3958cf0dae3f5c640))
+
 ## [3.13.5](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.4...3.13.5) (2025-07-16)
 
 ### Bug Fixes
