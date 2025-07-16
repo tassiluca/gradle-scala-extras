@@ -1,3 +1,9 @@
+## [3.13.3](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.2...3.13.3) (2025-07-16)
+
+### Bug Fixes
+
+* **build:** use api for scalafix and scalafmt dependencies, set for gradle properties and release max retries to 1 ([7530620](https://github.com/tassiluca/gradle-scala-extras/commit/7530620d118ad98000a4a67154c0f893841cf0e6))
+
 ## [3.13.2](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.1...3.13.2) (2025-07-15)
 
 ### Bug Fixes
