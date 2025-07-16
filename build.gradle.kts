@@ -76,16 +76,16 @@ signing {
 }
 
 publishOnCentral {
-    projectLongName = projectInfo.longName
-    projectDescription = description
-    projectUrl = projectInfo.website
-    scmConnection = projectInfo.scm
-    licenseName = "Apache License, Version 2.0"
-    licenseUrl = "https://www.apache.org/licenses/LICENSE-2.0"
-    repoOwner = projectInfo.repoOwner
+    projectLongName.set(projectInfo.longName)
+    projectDescription.set(description)
+    projectUrl.set(projectInfo.website)
+    scmConnection.set(projectInfo.scm)
+    licenseName.set("Apache License, Version 2.0")
+    licenseUrl.set("https://www.apache.org/licenses/LICENSE-2.0")
+    repoOwner.set(projectInfo.repoOwner)
     repository("https://maven.pkg.github.com/${projectInfo.repoOwner}/${rootProject.name}", "github") {
-        user = repoOwner
-        password = System.getenv("GITHUB_TOKEN")
+        user.set(repoOwner)
+        password.set(System.getenv("GITHUB_TOKEN"))
     }
 }
 
@@ -95,8 +95,8 @@ publishing {
             pom {
                 developers {
                     developer {
-                        name = "Luca Tassinari"
-                        email = "luca.tassinari.2000@gmail.com"
+                        name.set("Luca Tassinari")
+                        email.set("luca.tassinari.2000@gmail.com")
                     }
                 }
             }
@@ -106,14 +106,14 @@ publishing {
 
 gradlePlugin {
     plugins {
-        website = projectInfo.website
-        vcsUrl = projectInfo.vcsUrl
+        website.set(projectInfo.website)
+        vcsUrl.set(projectInfo.vcsUrl)
         create("") {
             id = "$group.${project.name}"
             displayName = projectInfo.longName
             description = project.description
             implementationClass = projectInfo.pluginImplementationClass
-            tags = projectInfo.tags
+            tags.set(projectInfo.tags)
         }
     }
 }
