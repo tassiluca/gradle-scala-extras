@@ -1,3 +1,9 @@
+## [3.13.4](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.3...3.13.4) (2025-07-16)
+
+### Dependency updates
+
+* **core-deps:** update dependency gradle to v8.14.3 ([#257](https://github.com/tassiluca/gradle-scala-extras/issues/257)) ([c7216c9](https://github.com/tassiluca/gradle-scala-extras/commit/c7216c92799d1ad8d57e6cb3862cf89a4f08a029))
+
 ## [3.13.3](https://github.com/tassiluca/gradle-scala-extras/compare/3.13.2...3.13.3) (2025-07-15)
 
 ### Bug Fixes
