@@ -1,6 +1,6 @@
 # Gradle Scala Extras
 
-![CI/CD](https://github.com/tassiluca/gradle-scala-extras/actions/workflows/dispatcher.yaml/badge.svg)
+[![Dispatcher](https://github.com/tassiluca/gradle-scala-extras/actions/workflows/dispatcher.yaml/badge.svg)](https://github.com/tassiluca/gradle-scala-extras/actions/workflows/dispatcher.yaml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 This Gradle plugin aims to enhance the Scala Gradle core plugin with quality assurance tools and custom configurations.
