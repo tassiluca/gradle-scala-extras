@@ -35,7 +35,7 @@ jobs:
           cp -r ./* .* /c/${{ steps.get_repo_name.outputs.repo_name }}
           ls -alh /c/${{ steps.get_repo_name.outputs.repo_name }}
       - name: Build, test, check and dry deployment
-        uses: DanySK/build-check-deploy-gradle-action@40f58dfd10e6d2096ffdc584b0e41c26ee56810a # 4.0.7
+        uses: DanySK/build-check-deploy-gradle-action@32b24fe7a4f791053df85591ab15715c38d6775c # 4.0.8
         with:
           build-command: |
             if [[ "$RUNNER_OS" == "Windows" ]]; then
@@ -87,7 +87,7 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version-file: package.json
-      - uses: DanySK/build-check-deploy-gradle-action@40f58dfd10e6d2096ffdc584b0e41c26ee56810a # 4.0.7
+      - uses: DanySK/build-check-deploy-gradle-action@32b24fe7a4f791053df85591ab15715c38d6775c # 4.0.8
         with:
           build-command: true
           check-command: true
