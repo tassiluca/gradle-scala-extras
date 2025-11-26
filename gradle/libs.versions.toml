@@ -6,7 +6,7 @@ kotest = "6.0.5"
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
 gradle-plugins-testkit = "io.github.mirko-felice.testkit:core:0.9.0"
-gradle-scalafix = "io.github.cosmicsilence:gradle-scalafix:0.2.5"
+gradle-scalafix = "io.github.cosmicsilence:gradle-scalafix:0.2.6"
 gradle-scalafmt = "cz.augi:gradle-scalafmt:1.21.5"
 
 [bundles]
