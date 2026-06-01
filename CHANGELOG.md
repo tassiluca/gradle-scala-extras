@@ -1,3 +1,20 @@
+## [3.17.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.16.2...3.17.0) (2026-06-01)
+
+### Dependency updates
+
+* **api-deps:** update dependency io.github.cosmicsilence:gradle-scalafix to v0.2.7 ([#471](https://github.com/tassiluca/gradle-scala-extras/issues/471)) ([ebd988c](https://github.com/tassiluca/gradle-scala-extras/commit/ebd988c7a88214a3647e765f9f2c182e66bd9977))
+* **deps:** update node.js to 24.16 ([#467](https://github.com/tassiluca/gradle-scala-extras/issues/467)) ([c9ea63d](https://github.com/tassiluca/gradle-scala-extras/commit/c9ea63d59a17f45ea62180f70bd72ce52e99e048))
+* **deps:** update plugin com.gradle.develocity to v4.4.2 ([#469](https://github.com/tassiluca/gradle-scala-extras/issues/469)) ([cfa9731](https://github.com/tassiluca/gradle-scala-extras/commit/cfa973153bdefaa3c268060c79e1c43e99f2614c))
+* **deps:** update plugin gitsemanticversioning to v7.0.19 ([#462](https://github.com/tassiluca/gradle-scala-extras/issues/462)) ([24e4980](https://github.com/tassiluca/gradle-scala-extras/commit/24e498097976e5a4ce291ed1bd806a2d9577101c))
+* **deps:** update plugin gitsemanticversioning to v7.0.20 ([#465](https://github.com/tassiluca/gradle-scala-extras/issues/465)) ([458ecf5](https://github.com/tassiluca/gradle-scala-extras/commit/458ecf5f78e94c6b2b901ed035251fdfcb672c52))
+* **deps:** update plugin kotlin-qa to v1.6.2 ([#463](https://github.com/tassiluca/gradle-scala-extras/issues/463)) ([2e18ab3](https://github.com/tassiluca/gradle-scala-extras/commit/2e18ab33b8d3d193a54fe818656ecc58677d76f9))
+* **deps:** update plugin kotlin-qa to v1.7.0 ([#470](https://github.com/tassiluca/gradle-scala-extras/issues/470)) ([2bcc529](https://github.com/tassiluca/gradle-scala-extras/commit/2bcc529104802533fbf7b4fad1e6562e4979ad62))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.17 ([#464](https://github.com/tassiluca/gradle-scala-extras/issues/464)) ([a9ea6e8](https://github.com/tassiluca/gradle-scala-extras/commit/a9ea6e8a96e1ebf997106285a9798d2e626608b1))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.33 ([#466](https://github.com/tassiluca/gradle-scala-extras/issues/466)) ([03faab1](https://github.com/tassiluca/gradle-scala-extras/commit/03faab1ac824b55a80dd70703e60a55ff4584dd6))
+
 ## [3.16.2](https://github.com/tassiluca/gradle-scala-extras/compare/3.16.1...3.16.2) (2026-05-10)
 
 ### Dependency updates
