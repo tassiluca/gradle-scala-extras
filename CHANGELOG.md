@@ -1,3 +1,18 @@
+## [3.18.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.17.0...3.18.0) (2026-06-13)
+
+### Dependency updates
+
+* **api-deps:** update dependency io.github.cosmicsilence:gradle-scalafix to v0.2.9 ([#479](https://github.com/tassiluca/gradle-scala-extras/issues/479)) ([c892982](https://github.com/tassiluca/gradle-scala-extras/commit/c892982f4cc31651f20548d0bc29f738f8843008))
+* **deps:** update kotlin monorepo to v2.4.0 ([#472](https://github.com/tassiluca/gradle-scala-extras/issues/472)) ([16d50de](https://github.com/tassiluca/gradle-scala-extras/commit/16d50de3133e74b5842a91b6f451012131188299))
+* **deps:** update plugin kotlin-qa to v1.7.1 ([#475](https://github.com/tassiluca/gradle-scala-extras/issues/475)) ([54099a4](https://github.com/tassiluca/gradle-scala-extras/commit/54099a4e0a7847e367fe93e066042c1a8fcc018a))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.1.18 ([#474](https://github.com/tassiluca/gradle-scala-extras/issues/474)) ([4f8ed9a](https://github.com/tassiluca/gradle-scala-extras/commit/4f8ed9acc8d272ef4cdeb278a8aebfa90e5fd274))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout digest to df4cb1c ([#473](https://github.com/tassiluca/gradle-scala-extras/issues/473)) ([af1106f](https://github.com/tassiluca/gradle-scala-extras/commit/af1106f167f5839512872fc0235467e2678fa300))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.34 ([#476](https://github.com/tassiluca/gradle-scala-extras/issues/476)) ([629e2a0](https://github.com/tassiluca/gradle-scala-extras/commit/629e2a0863aec696e3df93019471c53cc273fdbf))
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.35 ([#477](https://github.com/tassiluca/gradle-scala-extras/issues/477)) ([b6a80fa](https://github.com/tassiluca/gradle-scala-extras/commit/b6a80faa0dd78cade49039223ac98bc8c9166a3f))
+
 ## [3.17.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.16.2...3.17.0) (2026-06-01)
 
 ### Dependency updates
