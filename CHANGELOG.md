@@ -1,3 +1,16 @@
+## [3.19.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.18.0...3.19.0) (2026-06-17)
+
+### Dependency updates
+
+* **api-deps:** update dependency cz.augi:gradle-scalafmt to v1.21.6 ([#483](https://github.com/tassiluca/gradle-scala-extras/issues/483)) ([52e2f87](https://github.com/tassiluca/gradle-scala-extras/commit/52e2f87bb3583bea764887c48e609db9e94a2f60))
+* **deps:** update kotest to v6.2.0 ([#480](https://github.com/tassiluca/gradle-scala-extras/issues/480)) ([fd8aba5](https://github.com/tassiluca/gradle-scala-extras/commit/fd8aba5455ab148cab0b7ea0b8ca93a89bc4304c))
+* **deps:** update plugin com.gradle.develocity to v4.4.3 ([#481](https://github.com/tassiluca/gradle-scala-extras/issues/481)) ([b0c672c](https://github.com/tassiluca/gradle-scala-extras/commit/b0c672cb4b54cd58e7bea836e1baf7bbe0ffb92e))
+* **deps:** update plugin gitsemanticversioning to v7.0.22 ([#478](https://github.com/tassiluca/gradle-scala-extras/issues/478)) ([7474868](https://github.com/tassiluca/gradle-scala-extras/commit/74748683341d061186581ef7f2f406e0058b4864))
+
+### Build and continuous integration
+
+* **deps:** update danysk/build-check-deploy-gradle-action action to v4.0.36 ([#482](https://github.com/tassiluca/gradle-scala-extras/issues/482)) ([ff1940e](https://github.com/tassiluca/gradle-scala-extras/commit/ff1940e4360ad11f28c56d708f0ca762f84c5f08))
+
 ## [3.18.0](https://github.com/tassiluca/gradle-scala-extras/compare/3.17.0...3.18.0) (2026-06-13)
 
 ### Dependency updates
