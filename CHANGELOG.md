@@ -1,3 +1,11 @@
+## [3.19.3](https://github.com/tassiluca/gradle-scala-extras/compare/3.19.2...3.19.3) (2026-11-20)
+
+### Dependency updates
+
+* **core-deps:** update gradle to v8.14.8 ([#554](https://github.com/tassiluca/gradle-scala-extras/issues/554)) ([8d9bd6b](https://github.com/tassiluca/gradle-scala-extras/commit/8d9bd6b6df8b70057520054f6b90253561a2dfa2))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.159 ([#553](https://github.com/tassiluca/gradle-scala-extras/issues/553)) ([a317d25](https://github.com/tassiluca/gradle-scala-extras/commit/a317d25c395adf00884722b70e1e7b4a01e95c4f))
+* **deps:** update kotest to v6.2.7 ([#551](https://github.com/tassiluca/gradle-scala-extras/issues/551)) ([5e94e02](https://github.com/tassiluca/gradle-scala-extras/commit/5e94e02575c4fb7b734565f7db0a498a44c62cc0))
+
 ## [3.19.2](https://github.com/tassiluca/gradle-scala-extras/compare/3.19.1...3.19.2) (2026-11-11)
 
 ### Dependency updates
